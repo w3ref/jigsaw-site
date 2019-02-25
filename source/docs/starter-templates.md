@@ -5,7 +5,7 @@ section: documentation_content
 
 ## Using a Starter Template
 
-To get you up and running with a fully-configured site quickly, Jigsaw includes two "starter templates"—one for a blog, one for open source documenation—that are ready for you to customize with your content. To use these templates as your starting point, simply add the name of the template to the `init` command:
+To get you up and running with a fully-configured site quickly, Jigsaw includes two "starter templates"—one for a blog, one for open source documentation—that are ready for you to customize with your content. To use these templates as your starting point, simply add the name of the template to the `init` command:
 
 ```bash
 ./vendor/bin/jigsaw init blog
