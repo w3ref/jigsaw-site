@@ -31,8 +31,6 @@ The approach we use at Tighten for deploying Jigsaw sites to GitHub pages looks 
     $ git subtree push --prefix build_production origin gh-pages
     ```
 
-> Check out the NPM script we use to deploy this site [here](https://github.com/tightenco/jigsaw-site/blob/master/package.json#L12).
-
 ### Using Netlify
 
 [Netlify](https://www.netlify.com/) is a service that provides free static site hosting and continuous deployment that can be configured to play nice with any static site generator.
