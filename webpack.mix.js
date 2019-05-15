@@ -17,7 +17,7 @@ mix.webpackConfig({
 mix.js('source/_assets/js/app.js', 'js/')
     .less("source/_assets/less/main.less", "css/")
     .options({
-        postCss: [tailwindcss("tailwind.js")]
+        postCss: [tailwindcss()]
     })
     .purgeCss({
         enabled: true,
