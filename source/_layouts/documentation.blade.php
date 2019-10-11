@@ -14,7 +14,7 @@
         <div class="w-full flex items-center lg:max-w-md xl:max-w-lg border-2 border-indigo-lighter rounded bg-grey">
             <img src="/assets/img/icon-search.svg" class="absolute z-10 h-4 ml-2">
 
-            <input id="docsearch" type="text" class="pl-8 pr-2 py-2 bg-grey" placeholder="Search documentation..." />
+            <input id="docsearch" type="text" class="pl-8 pr-2 py-2 bg-grey" placeholder='Search documentation (Press "/" to focus)' />
         </div>
 
         <div class="hidden lg:flex lg:flex-1 items-center">
@@ -63,6 +63,17 @@
             apiKey: '57a7f5b1e4e0a44c7e2f8e96abcbf674',
             indexName: 'jigsaw',
             inputSelector: '#docsearch'
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode == 191) {
+                document.getElementById('docsearch').focus();
+                e.preventDefault()
+            }
+            if (e.keyCode == 27) {
+                document.getElementById('docsearch').blur();
+                e.preventDefault()
+            }
         });
     </script>
 @endsection

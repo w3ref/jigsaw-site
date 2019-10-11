@@ -15,3 +15,5 @@ For each page, Jigsaw provides you with certain metadata values through `get` fu
 `$page->getFilename()` returns the filename of the page, without extension (e.g. `my-first-page`)
 
 `$page->getExtension()` returns the file extension (e.g. `md`)
+
+`$page->getModifiedTime()` returns the last modified time of the file, as a Unix timestamp

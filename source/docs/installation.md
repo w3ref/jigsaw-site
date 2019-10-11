@@ -28,8 +28,6 @@ $ cd my-site
 $ composer require tightenco/jigsaw
 ```
 
-> Make sure `~/.composer/vendor/bin` is in your `$PATH`.
-
 ### 3. Initialize your Project
 
 Finally, from your project directory, run Jigsaw's `init` command to scaffold the default directory structure:

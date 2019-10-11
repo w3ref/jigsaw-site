@@ -5,8 +5,9 @@
         Jigsaw bakes in support for Laravel Mix so you can compile your CSS and Javascript assets the same way you're used to in Laravel.
     </p>
 
-    <div class="flex flex-wrap max-w-xs sm:max-w-xl px-0 sm:px-8">
-        <img class="w-1/2 sm:w-1/4 py-5 px-4 sm:px-8 md:px-12 sm:bg-white sm:border sm:border-r-0 border-indigo-lighter rounded-l-lg" src="/assets/img/less-logo.svg" alt="Less logo">
+
+    <div class="flex flex-wrap max-w-xs sm:max-w-xl h-32 mb-8 px-8 py-3">
+        <img class="w-1/2 sm:w-1/4 p-3 sm:p-4 md:p-6 sm:bg-white sm:border sm:border-r-0 border-indigo-lighter rounded-l-lg" src="/assets/img/less-logo.svg" alt="Less logo">
 
         <div class="w-1/2 sm:w-1/4 flex flex-col items-center justify-center py-5 px-0 sm:px-4 md:px-6 sm:bg-white sm:border sm:border-r-0 border-indigo-lighter">
             <img class="w-1/3 mt-2" src="/assets/img/tailwind-logo.svg" alt="Tailwind logo">
