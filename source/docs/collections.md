@@ -132,7 +132,7 @@ For example, to create a list of the titles for all your blog posts, you can ite
 
 For example, assuming that all posts have on their YAML front matter the property `author`, to filter all posts from a particular author, you can filter the collection of `$posts` and generate a new collection:
 
-> _author_posts.blade.php_
+> _author\_posts.blade.php_
 
 ```
 <?php
