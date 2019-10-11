@@ -31,6 +31,7 @@ return [
             'Extending Parent Templates' => ['root' => '/docs/collections-extending-parent-templates'],
             'Paths' => ['root' => '/docs/collections-paths'],
             'Sorting' => ['root' => '/docs/collections-sorting'],
+            'Filtering' => ['root' => '/docs/collections-filtering'],
             'Pagination' => ['root' => '/docs/collections-pagination'],
             'Variables and Functions' => ['root' => '/docs/collections-variables-and-functions'],
             'Remote Collections' => ['root' => '/docs/collections-remote-collections'],
