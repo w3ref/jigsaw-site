@@ -7,7 +7,12 @@ return [
             'Using a Starter Template' => ['root' => '/docs/starter-templates'],
         ],
     ],
-    'Building & Previewing' => ['root' => '/docs/building-and-previewing'],
+    'Building & Previewing' => [
+        'root' => '/docs/building-and-previewing',
+        'children' => [
+            'Environments' => ['root' => '/docs/building-and-previewing-environments'],
+        ],
+    ],
     'Compiling Assets' => ['root' => '/docs/compiling-assets'],
     'Creating your Site\'s Content' => [
         'root' => '/docs/content',
