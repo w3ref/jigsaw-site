@@ -37,3 +37,4 @@ Now, we can build a menu partial that highlights the current menu item for each 
 <a class="{{ $page->selected('posts') }}" href="{{ $page->baseUrl }}/posts">Blog</a>
 ```
 
+Alternatively, global helper methods can be stored in a separate `helpers.php` file, located at the root level of your project. This file should return an array, and will be merged into `config.php` automatically if present.
