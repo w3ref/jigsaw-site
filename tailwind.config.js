@@ -133,12 +133,16 @@ module.exports = {
       },
       height: {
         '70': '20rem',
-        '76': '25rem',
+        '76': '24rem',
       },
       leading: {
         '0': .5,
       },
-    }
+      width: {
+        '82': '26rem',
+        '112': '32rem',
+      },
+    },
   },
   variants: {
     // ...
