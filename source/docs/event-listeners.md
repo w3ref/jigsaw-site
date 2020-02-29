@@ -184,9 +184,15 @@ Sets the path to the `build` directory
 
 ---
 
+`getSourceFileInfo()` _(**afterBuild** only)_
+
+Returns a collection of all output files that were generated. For each item, the key contains the path of the output file relative to the `build` directory (e.g. `/posts/my-first-post`), while the value contains the Jigsaw `InputFile` object for the source file. On `InputFile`, every method from PHP's [`SplFileInfo`](https://www.php.net/manual/en/class.splfileinfo.php) class is available.
+
+---
+
 `getOutputPaths()` _(**afterBuild** only)_
 
-Returns an array of paths to the output files that were generated, relative to the `build` directory
+Returns a collection of paths to the output files that were generated, relative to the `build` directory
 
 ---
 
