@@ -17,10 +17,12 @@ For instance, you can add a method that identifies if the current page belongs t
 ```
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     'company' => 'Tighten',
     'selected' => function ($page, $section) {
-        return str_contains($page->getPath(), $section) ? 'selected' : '';
+        return Str::contains($page->getPath(), $section) ? 'selected' : '';
     },
 ];
 ```

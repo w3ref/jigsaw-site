@@ -48,7 +48,9 @@ If you included a date as a variable in your collection items (in YYYY-MM-DD for
 Though the path shorthand allows you to easily create the most common permalink formats, you can also return a closure from `path` if you require more control. The closure will receive the contents of the current collection item as its first parameter. For example:
 
 ```
+use Illuminate\Support\Str;
+
 'path' => function ($page) {
-    return 'posts/' . ($page->featured ? 'featured/' : '') . str_slug($page->getFilename());
+    return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
 },
 ```

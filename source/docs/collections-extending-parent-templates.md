@@ -89,6 +89,8 @@ If using multiple parent templates, you can specify separate paths in `config.ph
 ```
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     'collections' => [
         'people' => [
@@ -98,7 +100,7 @@ return [
             ],
             'api' => function ($page) {
                 return [
-                    'slug' => str_slug($page->getFilename()),
+                    'slug' => Str::slug($page->getFilename()),
                     'name' => $page->name,
                     'number' => $page->number,
                     'content' => $page->getContent(),
