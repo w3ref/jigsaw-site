@@ -193,3 +193,23 @@ $bladeCompiler->include('includes.copyright');
 
 @copyright(['year' => '2018'])
 ```
+
+---
+
+### Specifying Blade hint paths
+
+To use Blade hint paths/namespaces in your markup (for example, `email:components::section`), specify the path to the directory using the `viewHintPaths` key in `config.php`:
+
+> _config.php_
+
+```php
+<?php
+
+return [
+    'viewHintPaths' => [
+        'email:templates' => __DIR__.'/source/_layouts',
+        'email:components' => __DIR__.'/source/_components',
+        'email:partials' => __DIR__.'/source/_partials'
+    ]
+];
+```

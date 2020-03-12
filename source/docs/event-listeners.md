@@ -184,9 +184,15 @@ Sets the path to the `build` directory
 
 ---
 
+`getPages()` _(**afterBuild** only)_
+
+Returns a collection of all output files that were generated. For each item, the key contains the path of the output file relative to the `build` directory (e.g. `/posts/my-first-post`), while the value contains the contents of the `$page` variable for the source file. This exposes the [page metadata](/docs/page-metadata) functions such as `getPath()` and `getModifiedTime()` for each page, as well as any variables defined in the page's YAML header.
+
+---
+
 `getOutputPaths()` _(**afterBuild** only)_
 
-Returns an array of paths to the output files that were generated, relative to the `build` directory
+Returns a collection of paths to the output files that were generated, relative to the `build` directory
 
 ---
 

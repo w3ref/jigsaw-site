@@ -51,10 +51,10 @@ return [
 Under the hood, Jigsaw will:
 
 1. Create a `_tmp` directory in the collection's directory (e.g. `source/_posts/_tmp`) to store temporary Markdown files for each remote collection item
-2. Process the temporary files as though they were regular `*.md` files
+2. Process the temporary files as though they were `*.blade.md` files
 3. Remove the temporary files when `jigsaw build` is complete
 
-In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post_1.md`, `post_2.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
+In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post_1.blade.md`, `post_2.blade.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
 
 Alternatively, the `items` array can contain simple string values, which will be treated as the item's Markdown content, with no page variables:
 

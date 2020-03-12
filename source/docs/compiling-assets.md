@@ -94,7 +94,7 @@ Then, when Jigsaw builds your site, the entire `/source/assets` directory contai
 In your templates, you can reference these assets using the `mix` Blade directive. If you are using the default setup, your compiled assets will be copied to your site's `/assets/build` directory, which should be specified as the 2nd parameter of the `mix` directive:
 
 ```php
-// <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+<link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 ```
 
 ### Compiling your assets
@@ -172,6 +172,16 @@ If you'd like to switch to Less, use Coffeescript, or take advantage of any othe
 mix.react('source/_assets/js/main.js', 'js')
     .less('source/_assets/sass/main.less', 'css')
     .version();
+```
+
+---
+
+### Inlining your assets
+
+You may choose to inline your CSS or JavaScript assets into the `<style>` or `<script>` tags in your page `<head>`, to save a network request and to avoid blocking the rest of the page from loading. The `inline` helper function will accomplish this:
+
+```
+{{ inline(mix('css/main.css', 'assets/build')) }}
 ```
 
 ---

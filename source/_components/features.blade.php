@@ -47,7 +47,7 @@
 
             <a href="/docs/installation" title="Read the Jigsaw documentation"
                 class="text-purple hover:text-purple-darker text-base no-underline hover:underline">
-                Learn more in the docs <img src="/assets/img/icon-arrow.svg" class="w-4 -mb-1" alt="Learn more in the documentation">
+                Learn more in the docs <img src="/assets/img/icon-arrow.svg" class="inline-block w-4 -mb-1" alt="Learn more in the documentation">
             </a>
         </div>
 

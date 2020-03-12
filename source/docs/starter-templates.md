@@ -73,7 +73,7 @@ When a user installs your template using the `init` command, Jigsaw will run the
 
 - download the template files using Composer
 - install the base Jigsaw files
-- copy all the files from your template template into the new Jigsaw project, overwriting any matching base files
+- copy all the files from your template into the new Jigsaw project, overwriting any matching base files
 - run `composer install`, `npm install`, and `npm run dev`
 
 You can, however, customize the `init` process to gain full control over how a template is installed, by adding an `init.php` file to the root of the starter template. There are two ways to configure this init.php file:

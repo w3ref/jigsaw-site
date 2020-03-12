@@ -10,6 +10,8 @@ For each page, Jigsaw provides you with certain metadata values through `get` fu
 
 `$page->getPath()` returns the path to the current page, relative to the site root
 
+`$page->getRelativePath()` returns the relative path (i.e. parent directories) of the current page, relative to the site root
+
 `$page->getUrl()` returns the full URL to the item, if `baseUrl` was defined in `config.php`
 
 `$page->getFilename()` returns the filename of the page, without extension (e.g. `my-first-page`)
