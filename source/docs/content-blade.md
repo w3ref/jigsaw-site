@@ -6,7 +6,7 @@ section: documentation_content
 #### [Creating Your Site's Content](/docs/content)
 ## Blade Templates & Partials
 
-One of the biggest benefits of a templating language is the ability to create reusable layouts and partials. Jigsaw gives you access to all the templating features and control structures of Blade that are available in Laravel 5.6 (learn more about Blade layouts in the [official Blade documentation](https://laravel.com/docs/7.x/blade)).
+One of the biggest benefits of a templating language is the ability to create reusable layouts and partials. Jigsaw gives you access to all the templating features and control structures of Blade that are available in Laravel (learn more about Blade layouts in the [official Blade documentation](https://laravel.com/docs/7.x/blade)).
 
 ### Defining a Layout
 
