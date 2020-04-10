@@ -90,12 +90,11 @@ return [
         'posts' => [
             'extends' => '_layouts.post',
             'items' => function() {
-                $posts = json_decode(file_get_contents('https://api.mycms.com/posts'));
+                $posts = json_decode(file_get_contents('https://jsonplaceholder.typicode.com/posts'));
 
                 return collect($posts)->map(function ($post) {
                     return [
                         'title' => $post->title,
-                        'filename' => $post->slug,
                         'content' => $post->body,
                     ];
                 });
