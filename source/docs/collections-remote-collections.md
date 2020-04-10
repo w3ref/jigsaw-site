@@ -89,7 +89,7 @@ return [
     'collections' => [
         'posts' => [
             'extends' => '_layouts.post',
-            'items' => function() {
+            'items' => function ($config) {
                 $posts = json_decode(file_get_contents('https://jsonplaceholder.typicode.com/posts'));
 
                 return collect($posts)->map(function ($post) {
@@ -105,5 +105,7 @@ return [
 ```
 
 If you want the remote API to only be called when building for particular environments, you can place the `items` closure in the appropriate `config.{environment}.php` file. For example, to only access your remote API when running `build production`, create a `config.production.php` file and include your `items` closure there. This will prevent potentially long build times while running `build local` in development.
+
+The `items` closure receives the `config` array as a parameter, so you may also reference other config values (for example, an API URL) inside the closure.
 
 
