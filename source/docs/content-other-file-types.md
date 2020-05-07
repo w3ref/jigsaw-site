@@ -14,7 +14,7 @@ Regular `.blade.php` templates can also use the `@include` directive to include 
 
 ### Non-HTML files
 
-Other non-HTML, text-type files can also be processed with the Blade engine first, allowing you to dynamically generate non-HTML files that include variables and Blade control structures. Supported file extensions include `.blade.js`, `.blade.json`, `.blade.xml`, `.blade.rss`, `.blade.txt`, and `.blade.text`. Note that after these file are first processed by Blade, the output file will maintain its filetype extension in the resulting URL; for example, a file named `some-file.blade.xml` will be processed by Blade, then will be accessible at the URL `my-jigsaw-site.com/some-file.xml`.
+Other non-HTML, text-type files can also be processed with the Blade engine first, allowing you to dynamically generate non-HTML files that include variables and Blade control structures. Supported file extensions include `.blade.js`, `.blade.json`, `.blade.yml`, `.blade.yaml`, `.blade.xml`, `.blade.rss`, `.blade.atom`, `.blade.txt`, and `.blade.text`. Note that after these file are first processed by Blade, the output file will maintain its filetype extension in the resulting URL; for example, a file named `some-file.blade.xml` will be processed by Blade, then will be accessible at the URL `my-jigsaw-site.com/some-file.xml`.
 
 ### Other files
 
