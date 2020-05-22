@@ -14,7 +14,7 @@
         <div class="w-full flex items-center lg:max-w-md xl:max-w-lg border-2 border-indigo-lighter rounded bg-grey">
             <img src="/assets/img/icon-search.svg" class="absolute z-10 h-4 ml-2">
 
-            <input id="docsearch" type="text" class="pl-8 pr-2 py-2 bg-grey" placeholder='Search documentation (Press "/" to focus)' />
+            <input id="docsearch" type="text" class="w-full pl-8 pr-2 py-2 bg-grey" placeholder='Search documentation (Press "/" to focus)' />
         </div>
 
         <div class="hidden lg:flex lg:flex-1 items-center">
