@@ -168,7 +168,7 @@ $bladeCompiler->directive('datetime', function ($timestamp) {
     return '<?php echo date("l, F j, Y", ' . $timestamp . '); ?>';
 });
 
-$bladeCompiler->component('_components.alert');
+$bladeCompiler->aliasComponent('_components.alert');
 
 $bladeCompiler->include('includes.copyright');
 ```
