@@ -169,7 +169,7 @@ $init->output('Finishing installation...')
 
 <div class="pt-2"></div>
 
-> If you've created a starter template that you'd like to share, tell us on Twitter at [@tightenco](https://twitter.com/tightenco) or open an issue in the [Jigsaw docs repo](https://github.com/tightenco/jigsaw-site/issues). Very soon, we'll be adding a showcase of well-crafted templates created by the community, and we'd love to feature yours!
+> If you've created a starter template that you'd like to share, tell us on Twitter at [@tightenco](https://twitter.com/tightenco) or open an issue in the [Jigsaw docs repo](https://github.com/tighten/jigsaw-site/issues). Very soon, we'll be adding a showcase of well-crafted templates created by the community, and we'd love to feature yours!
 
 ---
 

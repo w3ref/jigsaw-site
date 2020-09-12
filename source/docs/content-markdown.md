@@ -6,7 +6,7 @@ section: documentation_content
 #### [Creating Your Site's Content](/docs/content)
 ## Markdown
 
-Have some pages you'd rather write in Markdown than Blade? [We know the feeling](https://github.com/tightenco/jigsaw-site/tree/master/source/docs).
+Have some pages you'd rather write in Markdown than Blade? [We know the feeling](https://github.com/tighten/jigsaw-site/tree/master/source/docs).
 
 Using Markdown in Jigsaw is as simple as using a ` .markdown` or `.md` extension, and specifying a few details in YAML front matter.
 

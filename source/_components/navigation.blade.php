@@ -8,7 +8,7 @@
         </div>
 
         <div class="tracking-wide flex items-center">
-            <a href="https://github.com/tightenco/jigsaw" title="Contribute to Jigsaw on GitHub"
+            <a href="https://github.com/tighten/jigsaw" title="Contribute to Jigsaw on GitHub"
                 class="mr-4 block text-sm text-blue-darker hover:text-purple-darker uppercase font-medium">
                 <span class="hidden md:inline-block hover:underline">Contribute</span>
 
