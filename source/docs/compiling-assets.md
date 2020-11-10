@@ -172,7 +172,7 @@ If you'd like to switch to Sass, Less, Coffeescript, or take advantage of any ot
 ```js
 mix.jigsaw()
     .react('source/_assets/js/main.js', 'js')
-    .less('source/_assets/sass/main.less', 'css')
+    .less('source/_assets/less/main.less', 'css')
     .version();
 ```
 
