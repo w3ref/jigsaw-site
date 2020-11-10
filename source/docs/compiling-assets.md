@@ -31,8 +31,8 @@ By default, any assets you want to process with Mix should live in `/source/_ass
             <div class="folder folder--open">js
                 <div class="file">app.js</div>
             </div>
-            <div class="folder folder--open">sass
-                <div class="file">main.scss</div>
+            <div class="folder folder--open">css
+                <div class="file">main.css</div>
             </div>
         </div>
         <div class="folder folder--open">_layouts
@@ -51,7 +51,7 @@ By default, any assets you want to process with Mix should live in `/source/_ass
     <div class="ellipsis">...</div>
 </div>
 
-Mix looks for each asset type _(like Sass, Less, or Coffeescript)_ in a subdirectory named after that asset type. We recommend following this convention to avoid additional configuration.
+Mix looks for each asset type _(like CSS, JS, Sass, Less, etc.)_ in a subdirectory named after that asset type. We recommend following this convention to avoid additional configuration.
 
 By default, once Webpack compiles your assets, they will be placed in their corresponding subdirectories in `/source/assets/build`:
 
@@ -61,8 +61,8 @@ By default, once Webpack compiles your assets, they will be placed in their corr
             <div class="folder folder--open">js
                 <div class="file">app.js</div>
             </div>
-            <div class="folder folder--open">sass
-                <div class="file">main.scss</div>
+            <div class="folder folder--open">css
+                <div class="file">main.css</div>
             </div>
         </div>
         <div class="folder folder--open">_layouts
@@ -127,49 +127,51 @@ You can also watch a specific environment by running `npm run local`, `npm run s
 
 ### Changing asset locations
 
-If you'd like to change the source and destination directories for your assets, edit the following lines in `webpack.mix.js`:
+If you'd like to change the source directory for your assets, edit the following line in `webpack.mix.js`:
 
 ```js
 mix.setPublicPath('source/assets/build');
+```
 
-mix.js('source/_assets/js/main.js', 'js/')
-    .sass('source/_assets/sass/main.scss', 'css')
-    .options({
-        processCssUrls: false,
-    }).version();
+If you'd like to change the destination directory for your assets, edit the second parameter of each compile step of `webpack.mix.js`:
+
+```js
+mix.jigsaw()
+    .js('source/_assets/js/main.js', 'scripts')
+    .postCss('source/_assets/css/main.css', 'styles')
+    ...
 ```
 
 ---
 
 ### Enabling different preprocessors
 
-Jigsaw ships with the following `webpack.mix.js` and is configured to use Sass out of the box:
+Jigsaw ships with the following `webpack.mix.js` and is configured to use Tailwind CSS and PostCSS out of the box:
 
 ```js
-let mix = require('laravel-mix');
-let build = require('./tasks/build.js');
+const mix = require('laravel-mix');
+require('laravel-mix-jigsaw');
 
 mix.disableSuccessNotifications();
 mix.setPublicPath('source/assets/build');
-mix.webpackConfig({
-    plugins: [
-        build.jigsaw,
-        build.browserSync(),
-        build.watch(['source/**/*.md', 'source/**/*.php', 'source/**/*.scss', '!source/**/_tmp/*']),
-    ]
-});
 
-mix.js('source/_assets/js/main.js', 'js')
-    .sass('source/_assets/sass/main.scss', 'css')
+mix.jigsaw()
+    .js('source/_assets/js/main.js', 'js')
+    .postCss('source/_assets/css/main.css', 'css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+    ])
     .options({
         processCssUrls: false,
-    }).version();
+    })
+    .version();
 ```
 
-If you'd like to switch to Less, use Coffeescript, or take advantage of any other Mix features, feel free to edit this file to your heart's content. Here's an example of what it might look like to use Less and React:
+If you'd like to switch to Sass, Less, Coffeescript, or take advantage of any other Mix features, feel free to edit this file to your heart's content. Here's an example of what it might look like to use Less and React:
 
 ```js
-mix.react('source/_assets/js/main.js', 'js')
+mix.jigsaw()
+    .react('source/_assets/js/main.js', 'js')
     .less('source/_assets/sass/main.less', 'css')
     .version();
 ```
@@ -188,5 +190,5 @@ You may choose to inline your CSS or JavaScript assets into the `<style>` or `<s
 
 ### Note for Sass users
 
-To prevent URLs in your `.scss` files—such as background images and fonts—from being processed and modified by Mix, set the `processCssUrls` option to `false` in your `webpack.mix.js` file.
+To prevent URLs in your `.scss` files—such as background images and fonts—from being processed and modified by Mix, make sure the `processCssUrls` option is set to `false` in your `webpack.mix.js` file.
 
