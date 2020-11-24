@@ -99,9 +99,23 @@ That data is then available in your partial as a normal variable:
 </header>
 ```
 
-### Preventing layouts & partials from rendering
+### Components
 
-Since it's important that layouts and partials are never rendered on their own, you need to be able to tell Jigsaw when a file shouldn't be rendered.
+Jigsaw supports both class based and anonymous Blade components.
+
+To display a component, you may use a Blade component tag within one of your Blade templates. Blade component tags start with the string x- followed by the kebab case name of the component class:
+
+```
+<x-input />
+```
+
+In Jigsaw, views are auto discovered from the `source/_components` directory so, to create an anonymous component, you only need to place a Blade template within that directory.
+
+Class based components however, unlike the Laravel implementation, are not auto discovered and need to be registered using `$bladeCompiler->component()` as detailed in the [Extending Blade with custom directives](#extending-blade-with-custom-directives) section below.
+
+### Preventing layouts, partials & components from rendering
+
+Since it's important that layouts, partials and components are never rendered on their own, you need to be able to tell Jigsaw when a file shouldn't be rendered.
 
 To prevent a file or folder from being rendered, simply prefix it with an underscore:
 
