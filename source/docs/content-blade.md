@@ -109,9 +109,21 @@ To display a component, you may use a Blade component tag within one of your Bla
 <x-input />
 ```
 
-In Jigsaw, views are auto discovered from the `source/_components` directory so, to create an anonymous component, you only need to place a Blade template within that directory.
+In Jigsaw, views are auto-discovered from the `source/_components` directory; to create an anonymous `<x-`-style components, you only need to place a Blade template within that directory.
 
-Class based components however, unlike the Laravel implementation, are not auto discovered and need to be registered using `$bladeCompiler->component()` as detailed in the [Extending Blade with custom directives](#extending-blade-with-custom-directives) section below.
+Class-based components can be manually registered using `$bladeCompiler->component()`, as detailed in the [Extending Blade with custom directives](#extending-blade-with-custom-directives) section below; or, they can be auto-discovered by using the `Components` namespace. To autoload class-based components that use the `Components` namespace, add an `autoload` entry to your `composer.json` file:
+
+> _composer.json_
+
+```
+"autoload": {
+    "psr-4": {
+        "Components\\": "where/you/want/to/keep/component/classes/"
+    }
+}
+```
+
+... and then update Composer's autoload references by running `composer dump-autoload` in your terminal.
 
 ### Preventing layouts, partials & components from rendering
 
