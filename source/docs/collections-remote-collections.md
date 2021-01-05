@@ -54,7 +54,7 @@ Under the hood, Jigsaw will:
 2. Process the temporary files as though they were `*.blade.md` files
 3. Remove the temporary files when `jigsaw build` is complete
 
-In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post_1.blade.md`, `post_2.blade.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
+In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post-1.blade.md`, `post-2.blade.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
 
 Alternatively, the `items` array can contain simple string values, which will be treated as the item's Markdown content, with no page variables:
 
