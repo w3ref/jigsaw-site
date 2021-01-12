@@ -50,5 +50,11 @@ Once you've located your Nginx configuration file, add the following line to the
 error_page 404 /404;
 ```
 
+In addition, if it is not already there, make sure the following line appears in the section of your configuration file that begins with `location ~ \.php$ {`:
+
+```
+fastcgi_intercept_errors on;
+```
+
 After you restart your Nginx server, it will look for the error page `/404/index.html` in your `build` directory whenever someone navigates to a page that does not exist.
 
