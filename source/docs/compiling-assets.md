@@ -3,27 +3,27 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Compiling Assets with Laravel Mix
+## Компиляция ресурсов с помощью Laravel Mix
 
-Jigsaw sites are configured with support for [Laravel Mix](https://laravel.com/docs/7.x/mix) out of the box. If you've ever used Mix in a Laravel project, you already know how to use Mix with Jigsaw.
+Сайты Jigsaw настроены с поддержкой [Laravel Mix](https://laravel.com/docs/7.x/mix) из коробки. Если Вы когда-либо использовали Mix в проекте Laravel, Вы уже знаете, как использовать Mix с Jigsaw.
 
 ---
 
-### Setup
+### Настройка
 
-To get started, first make sure you have Node.js and NPM installed in your environment.
+Для начала убедитесь, что в Вашей среде установлены Node.js и NPM.
 
-Once you have Node.js and NPM installed, pull in the dependencies needed to compile your assets:
+После установки Node.js и NPM подключите зависимости, необходимые для компиляции Ваших ресурсов:
 
 ```
 $ npm install
 ```
 
-For more detailed installation instructions, check out the [full Laravel Mix documentation](https://laravel.com/docs/7.x/mix).
+Более подробные инструкции по установке смотрите в [полной документации Laravel Mix](https://laravel.com/docs/7.x/mix).
 
-### Organizing your assets
+### Организация Ваших ресурсов
 
-By default, any assets you want to process with Mix should live in `/source/_assets`:
+По умолчанию любые ресурсы, которые Вы хотите обработать с помощью Mix, должны находиться в `/source/_assets`:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -51,9 +51,9 @@ By default, any assets you want to process with Mix should live in `/source/_ass
     <div class="ellipsis">...</div>
 </div>
 
-Mix looks for each asset type _(like CSS, JS, Sass, Less, etc.)_ in a subdirectory named after that asset type. We recommend following this convention to avoid additional configuration.
+Mix ищет каждый тип ресурса _(например, CSS, JS, Sass, Less, и т.д.)_ в подкаталоге, названном в честь этого типа ресурса. Мы рекомендуем следовать этому соглашению, чтобы избежать дополнительной настройки.
 
-By default, once Webpack compiles your assets, they will be placed in their corresponding subdirectories in `/source/assets/build`:
+По умолчанию, когда Webpack скомпилирует Ваши ресурсы, они будут помещены в соответствующие подкаталоги в `/source/assets/build`:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -89,51 +89,51 @@ By default, once Webpack compiles your assets, they will be placed in their corr
     <div class="ellipsis">...</div>
 </div>
 
-Then, when Jigsaw builds your site, the entire `/source/assets` directory containing your `build` files (and any other directories containing static assets, such as `images` or `fonts`, that you choose to store there) will be copied to `/build_local` or `/build_production`.
+Затем, когда Jigsaw соберет Ваш сайт, весь каталог `/source/assets`, содержащий Ваши файлы `build` (и любые другие каталоги, содержащие статические ресурсы, такие как `images` или `fonts`, которые Вы выберете для хранения там), будет можно скопировать в `/build_local` или `/build_production`.
 
-In your templates, you can reference these assets using the `mix` Blade directive. If you are using the default setup, your compiled assets will be copied to your site's `/assets/build` directory, which should be specified as the 2nd parameter of the `mix` directive:
+В Ваших шаблонах Вы можете ссылаться на эти ресурсы с помощью директивы Blade `mix`. Если Вы используете настройку по умолчанию, Ваши скомпилированные ресурсы будут скопированы в каталог Вашего сайта `/assets/build`, который должен быть указан как второй параметр директивы `mix`:
 
 ```php
 <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 ```
 
-### Compiling your assets
+### Компиляция ваших ресурсов
 
-To compile your assets, run:
+Чтобы скомпилировать Ваши ресурсы, запустите:
 
 ```
 $ npm run dev
 ```
 
-First, Webpack will compile your assets and store them in the `/source/assets/build` directory. Then, Jigsaw's `build` command will be run automatically to build your site (including your compiled assets) to `/build_local`. You can then preview your changes in the browser.
+Во-первых, Webpack скомпилирует Ваши ресурсы и сохранит их в каталоге `/source/assets/build`. Затем команда Jigsaw `build` будет запущена автоматически для сборки Вашего сайта (включая Ваши скомпилированные ресурсы) в `/build_local`. Затем Вы можете просмотреть свои изменения в браузере.
 
-### Watching for changes
+### Наблюдение за изменениями
 
-Manually running `npm run dev` every time you make a change gets old pretty fast.
+Запустите вручную `npm run dev` каждый раз, когда Вы вносите изменения, довольно быстро устаревает.
 
-Instead, you can run the following command to watch your project for changes:
+Вместо этого Вы можете запустить следующую команду, чтобы следить за изменениями в Вашем проекте:
 
 ```
 $ npm run watch
 ```
 
-Any time any file changes in your project, Webpack will recompile your assets, and Jigsaw will regenerate your static HTML pages to `/build_local`.
+Каждый раз, когда в Вашем проекте изменяется любой файл, Webpack перекомпилирует Ваши ресурсы, а Jigsaw регенерирует Ваши статические HTML-страницы в `/build_local`.
 
-Using `npm run watch` also enables [Browsersync](https://www.browsersync.io/), so your browser will automatically reload any time you make a change. It also manages serving your site locally for you, so you don't need to start your own local PHP server.
+Использование `npm run watch` также включает [Browsersync](https://www.browsersync.io/), поэтому Ваш браузер будет автоматически перезагружаться каждый раз, когда Вы вносите изменения. Он также управляет обслуживанием Вашего сайта локально для Вас, поэтому Вам не нужно запускать собственный локальный сервер PHP.
 
-You can also watch a specific environment by running `npm run local`, `npm run staging`, or `npm run production`.
+Вы также можете наблюдать за конкретной средой, запустив `npm run local`, `npm run staging` или `npm run production`.
 
 ---
 
-### Changing asset locations
+### Изменение местоположения ресурсов
 
-If you'd like to change the source directory for your assets, edit the following line in `webpack.mix.js`:
+Если Вы хотите изменить исходный каталог для Ваших ресурсов, отредактируйте следующую строку в `webpack.mix.js`:
 
 ```js
 mix.setPublicPath('source/assets/build');
 ```
 
-If you'd like to change the destination directory for your assets, edit the second parameter of each compile step of `webpack.mix.js`:
+Если Вы хотите изменить каталог назначения для Ваших ресурсов, отредактируйте второй параметр каждого шага компиляции `webpack.mix.js`:
 
 ```js
 mix.jigsaw()
@@ -144,9 +144,9 @@ mix.jigsaw()
 
 ---
 
-### Enabling different preprocessors
+### Включение разных препроцессоров
 
-Jigsaw ships with the following `webpack.mix.js` and is configured to use Tailwind CSS and PostCSS out of the box:
+Jigsaw поставляется со следующим файлом `webpack.mix.js` и настроен на использование Tailwind CSS и PostCSS из коробки:
 
 ```js
 const mix = require('laravel-mix');
@@ -167,7 +167,7 @@ mix.jigsaw()
     .version();
 ```
 
-If you'd like to switch to Sass, Less, Coffeescript, or take advantage of any other Mix features, feel free to edit this file to your heart's content. Here's an example of what it might look like to use Less and React:
+Если Вы хотите переключиться на Sass, Less, Coffeescript или воспользоваться другими функциями Mix, не стесняйтесь редактировать этот файл по своему усмотрению. Вот пример того, как может выглядеть использование Less и React:
 
 ```js
 mix.jigsaw()
@@ -178,9 +178,9 @@ mix.jigsaw()
 
 ---
 
-### Inlining your assets
+### Встраивание Ваших ресурсов
 
-You may choose to inline your CSS or JavaScript assets into the `<style>` or `<script>` tags in your page `<head>`, to save a network request and to avoid blocking the rest of the page from loading. The `inline` helper function will accomplish this:
+Вы можете встроить свои ресурсы CSS или JavaScript в теги `<style>` или `<script>` на своей странице `<head>`, чтобы сохранить сетевой запрос и избежать блокировки загрузки остальной части страницы. Вспомогательная функция `inline` сделает это:
 
 ```
 {{ inline(mix('css/main.css', 'assets/build')) }}
@@ -188,7 +188,7 @@ You may choose to inline your CSS or JavaScript assets into the `<style>` or `<s
 
 ---
 
-### Note for Sass users
+### Примечание для пользователей Sass
 
-To prevent URLs in your `.scss` files—such as background images and fonts—from being processed and modified by Mix, make sure the `processCssUrls` option is set to `false` in your `webpack.mix.js` file.
+Чтобы URL-адреса в Ваших файлах `.scss`, такие как фоновые изображения и шрифты, не обрабатывались и не изменялись Mix, убедитесь, что для параметра `processCssUrls` установлено значение `false` в Вашем файле `webpack.mix.js`.
 
