@@ -3,19 +3,19 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Creating Your Site's Content](/docs/content)
-## Other File Types
+#### [Создание контента Вашего сайтаДругие типы файлов](/docs/content)
+## Другие типы файлов
 
-### Blade/Markdown hybrids
+### Гибрид Blade/Markdown
 
-Markdown files can use Blade syntax in them—for displaying data, control structures, etc.—by using the extension `.blade.md`. Files with a `.blade.md` extension will be processed first by the Blade engine, before the Markdown is parsed.
+Файлы Markdown могут использовать в них синтаксис Blade - для отображения данных, структур управления и т. д. - с помощью расширения `.blade.md`. Файлы с расширением `.blade.md` сначала обрабатываются механизмом Blade, а затем анализируется Markdown.
 
-Regular `.blade.php` templates can also use the `@include` directive to include partials that are Markdown files. A Markdown partial that is included in a Blade template using `@include` will be parsed by the Markdown parser first.
+Обычные шаблоны `.blade.php` также могут использовать директиву `@include` для включения частичных файлов, которые являются файлами Markdown. Частичные файлы Markdown, включенный в шаблон Blade с помощью `@include`, сначала будет проанализирован анализатором Markdown.
 
-### Non-HTML files
+### Не-HTML файлы
 
-Other non-HTML, text-type files can also be processed with the Blade engine first, allowing you to dynamically generate non-HTML files that include variables and Blade control structures. Supported file extensions include `.blade.js`, `.blade.json`, `.blade.yml`, `.blade.yaml`, `.blade.xml`, `.blade.rss`, `.blade.atom`, `.blade.txt`, and `.blade.text`. Note that after these file are first processed by Blade, the output file will maintain its filetype extension in the resulting URL; for example, a file named `some-file.blade.xml` will be processed by Blade, then will be accessible at the URL `my-jigsaw-site.com/some-file.xml`.
+Другие текстовые файлы, отличные от HTML, также могут быть сначала обработаны с помощью механизма Blade, что позволяет динамически создавать файлы не в формате HTML, которые включают переменные и управляющие структуры Blade. Поддерживаемые расширения файлов: `.blade.js`, `.blade.json`, `.blade.yml`, `.blade.yaml`, `.blade.xml`, `.blade.rss`, `.blade.atom`, `.blade.txt` и `.blade.text`. Обратите внимание, что после того, как эти файлы будут сначала обработаны Blade, выходной файл сохранит свое расширение типа файла в результирующем URL-адресе; например, файл с именем `some-file.blade.xml` будет обработан Blade, а затем будет доступен по URL-адресу `my-jigsaw-site.com/some-file.xml`.
 
-### Other files
+### Другие файлы
 
-Any other files, such as `.html` files, will be copied directly to your `build` folders without being modified by Jigsaw.
+Любые другие файлы, такие как файлы `.html`, будут скопированы прямо в Ваши папки `build` без изменения Jigsaw.

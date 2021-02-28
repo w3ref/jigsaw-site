@@ -3,11 +3,10 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Creating Your Site's Content
+## Создание контента Вашего сайта
 
-All content for your site should be stored in the `source` directory. When authoring your content, you have the choice to create files using several formats, including:
+Весь контент для Вашего сайта должен храниться в каталоге `source`. При создании контента у Вас есть возможность создавать файлы в нескольких форматах, в том числе:
 
-- [Laravel's Blade templating language](/docs/content-blade)
-- [Markdown](/docs/content-markdown)
-- Or a variety of [other file types](/docs/content-other-file-types)
-
+- [Язык шаблонов Blade Laravel](/docs/content-blade)
+- [Разметка](/docs/content-markdown)
+- Или множество [других типов файлов](/docs/content-other-file-types)

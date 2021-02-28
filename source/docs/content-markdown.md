@@ -3,14 +3,14 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Creating Your Site's Content](/docs/content)
-## Markdown
+#### [Создание контента Вашего сайта](/docs/content)
+## Язык Разметки - Markdown
 
-Have some pages you'd rather write in Markdown than Blade? [We know the feeling](https://github.com/tighten/jigsaw-site/tree/master/source/docs).
+Есть ли страницы, которые Вы бы предпочли писать в Markdown, чем в Blade? [Мы знаем это чувство](https://github.com/tighten/jigsaw-site/tree/master/source/docs).
 
-Using Markdown in Jigsaw is as simple as using a ` .markdown` or `.md` extension, and specifying a few details in YAML front matter.
+Использовать Markdown в Jigsaw так же просто, как использовать расширение ` .markdown` или `.md` и указать некоторые детали во вступительной части YAML.
 
-For example, say you have this layout and you'd like to populate the `content` section using Markdown:
+Например, предположим, что у Вас есть этот макет и Вы хотите заполнить раздел `content` с помощью Markdown:
 
 ```html
 <html>
@@ -21,7 +21,7 @@ For example, say you have this layout and you'd like to populate the `content` s
 </html>
 ```
 
-If that layout was named `master` in the `_layouts` folder, you could create a Markdown page that used this layout like so:
+Если бы этот макет был назван `master` в папке `_layouts`, Вы могли бы создать страницу Markdown, которая использовала бы этот макет следующим образом:
 
 ```markdown
 ---
@@ -29,26 +29,26 @@ extends: _layouts.master
 section: content
 ---
 
-# My awesome heading!
+# Мой классный заголовок!
 
-My awesome content!
+Мой потрясающий контент!
 ```
 
-The end result would be a generated page that looked like this:
+Конечным результатом будет сгенерированная страница, которая выглядела бы так:
 
 ```html
 <html>
     <head>...</head>
     <body>
-        <h1>My awesome heading!</h1>
-        <p>My awesome content!</p>
+        <h1>Мой классный заголовок!</h1>
+        <p>Мой потрясающий контент!</p>
     </body>
 </html>
 ```
 
-### Custom front matter variables
+### Пользовательские переменные содержимого фасада
 
-Imagine you have a layout named `post.blade.php` in your `_layouts` folder that looks like this:
+Представьте, что у Вас есть макет с именем `post.blade.php` в папке `_layouts`, который выглядит следующим образом:
 
 > __layouts/post.blade.php_
 
@@ -63,7 +63,7 @@ Imagine you have a layout named `post.blade.php` in your `_layouts` folder that 
 @endsection
 ```
 
-You can populate the `title` and `author` variables by adding custom keys to the YAML front matter:
+Вы можете заполнить переменные `title` и `author`, добавив настраиваемые ключи в заголовок YAML:
 
 > _my-post.md_
 
@@ -71,11 +71,11 @@ You can populate the `title` and `author` variables by adding custom keys to the
 ---
 extends: _layouts.post
 section: postContent
-title: "Jigsaw is awesome!"
-author: "Adam Wathan"
+title: "Jigsaw потрясающий!"
+author: "Адам Уотан"
 ---
 
-Jigsaw is one of the greatest static site generators of all time.
+Jigsaw - один из лучших генераторов статических сайтов всех времен.
 ```
 
 ...which would generate this:
@@ -84,11 +84,11 @@ Jigsaw is one of the greatest static site generators of all time.
 <html>
     <head>...</head>
     <body>
-        <h1>Jigsaw is awesome!</h1>
-        <h2>by Adam Wathan</h2>
+        <h1>Jigsaw потрясающий!</h1>
+        <h2>от Адама Уотана</h2>
 
         <p>
-            Jigsaw is one of the greatest static site generators of all time.
+            Jigsaw - один из лучших генераторов статических сайтов всех времен.
         </p>
     </body>
 </html>
@@ -96,9 +96,9 @@ Jigsaw is one of the greatest static site generators of all time.
 
 <br>
 
-### Formatting dates
+### Форматирование дат
 
-The YAML processor converts any dates that it finds in a Markdown file's front matter into integer timestamps. When outputting a date variable in your Blade template, you can use PHP's `date()` function to specify a date format. For example:
+Процессор YAML преобразует любые даты, которые он находит в начальной части файла Markdown, в целочисленные временные метки. При выводе переменной даты в шаблоне Blade Вы можете использовать функцию `date()`, чтобы указать формат даты. Например:
 
 
 > _my-post.md_
@@ -107,22 +107,22 @@ The YAML processor converts any dates that it finds in a Markdown file's front m
 ---
 extends: _layouts.post
 section: postContent
-date: 2018-02-16
+date: 2021-02-28
 ---
 ```
 
 > __layouts/post.blade.php_
 
 ```html
-<p>The formatted date is {{ date('F j, Y', $post->date) }}</p>
+<p>Форматированная дата {{ date('d.m.Y', $post->date) }}</p>
 ```
 
 
 <br>
 
-### Specifying a permalink
+### Указание постоянной ссылки
 
-You can specify a `permalink` in the YAML front matter to override the default path of a file when your site is built. This can be used, for example, to create a [custom 404](/docs/custom-404-page) page that is output to `404.html` (instead of the default `404/index.html`):
+Вы можете указать `permalink` в начальной части YAML, чтобы переопределить путь по умолчанию к файлу при создании Вашего сайта. Это может быть использовано, например, для создания [пользовательской страницы 404](/docs/custom-404-page), которая выводится в `404.html` (вместо страницы по умолчанию `404/index.html`):
 
 > _source/404.md_
 
@@ -133,6 +133,6 @@ section: content
 permalink: 404.html
 ---
 
-### Sorry, that page does not exist.
+### Извините, данная страница не существует.
 ```
 

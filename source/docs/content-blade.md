@@ -3,64 +3,64 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Creating Your Site's Content](/docs/content)
-## Blade Templates & Partials
+#### [Создание контента Вашего сайта](/docs/content)
+## Шаблоны и части в Blade
 
-One of the biggest benefits of a templating language is the ability to create reusable layouts and partials. Jigsaw gives you access to all the templating features and control structures of Blade that are available in Laravel (learn more about Blade layouts in the [official Blade documentation](https://laravel.com/docs/7.x/blade)).
+Одним из самых больших преимуществ языка шаблонов является возможность создавать переиспользуемые макеты и частичные. Jigsaw дает Вам доступ ко всем функциям шаблонов и управляющим структурам Blade, которые доступны в Laravel (дополнительные сведения о макетах Blade смотрите в [официальной документации Blade](https://laravel.com/docs/7.x/blade)).
 
-### Defining a Layout
+### Определение макета
 
-Layouts themselves are just basic Blade templates that have one or more `@yield` calls where child templates can render their contents.
+Сами макеты - это просто базовые шаблоны Blade, которые имеют один или несколько вызовов `@yield`, где дочерние шаблоны могут отображать свое содержимое.
 
-A basic master layout could look like this:
+Базовый главный макет может выглядеть так:
 
 ```
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Amazing Web</title>
+        <title>Удивительная паутина</title>
     </head>
     <body>
         <header>
-            My Amazing Site
+            Мой удивительный сайт
         </header>
 
         @yield('content')
 
         <footer>
-            <p>©2016 Awesome Co</p>
+            <p>©2016 Удивительная Компания</p>
         </footer>
     </body>
 </html>
 ```
 
-Jigsaw provides a `/source/_layouts` directory out of the box with a basic master layout.
+В Jigsaw прямо из коробки есть каталог `/source/_layouts` с основным макетом.
 
-### Extending a Layout
+### Расширение макета
 
-To extend a layout, create a template that specifies which layout to extend in an `@extends` directive, and which section(s) to populate using the `@section` directive:
+Чтобы расширить макет, создайте шаблон, который указывает, какой макет расширять в директиве `@extends`, и какие разделы необходимо заполнить с помощью директивы `@section`:
 
 ```
 @extends('_layouts.master')
 
 @section('content')
     <div>
-        <p>The contents of my amazing homepage.</p>
+        <p>Содержание моей замечательной домашней страницы.</p>
     </div>
 @endsection
 ```
 
-Layouts and partials are referenced relative to the `source` directory using _dot notation_, where each dot represents a directory separator in the file name and the `.blade.php` extension omitted.
+Макеты и частичные данные указываются относительно каталога `source` с использованием _точечной нотации_, где каждая точка представляет собой разделитель каталогов в имени файла, а расширение `.blade.php` опускается.
 
-### Partials
+### Частичные шаблоны
 
-To include a template inside of another template, use the `@include` directive:
+Чтобы включить шаблон в другой шаблон, используйте директиву `@include`:
 
 ```
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Amazing Web</title>
+        <title>Удивительная паутина</title>
     </head>
     <body>
         @include('_partials.header')
@@ -72,13 +72,13 @@ To include a template inside of another template, use the `@include` directive:
 </html>
 ```
 
-You can pass data to a partial by passing an associative array as a second parameter:
+Вы можете передать данные в частичные шаблоны, передав ассоциативный массив в качестве второго параметра:
 
 ```
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Amazing Web</title>
+        <title>Удивительная паутина</title>
     </head>
     <body>
         @include('_partials.header', ['page_title' => 'My Amazing Site'])
@@ -90,7 +90,7 @@ You can pass data to a partial by passing an associative array as a second param
 </html>
 ```
 
-That data is then available in your partial as a normal variable:
+Затем эти данные доступны в Вашем частичном шаблоне как обычная переменная:
 
 ```
 <!-- _partials/header.blade.php -->
@@ -99,19 +99,19 @@ That data is then available in your partial as a normal variable:
 </header>
 ```
 
-### Components
+### Компоненты
 
-Jigsaw supports both class based and anonymous Blade components.
+Jigsaw поддерживает как классовые, так и анонимные компоненты Blade.
 
-To display a component, you may use a Blade component tag within one of your Blade templates. Blade component tags start with the string x- followed by the kebab case name of the component class:
+Для отображения компонента Вы можете использовать тег компонента Blade в одном из Ваших шаблонов Blade. Теги компонентов Blade начинаются со строки x-, за которой следует имя кебаба класса компонента:
 
 ```
 <x-input />
 ```
 
-In Jigsaw, views are auto-discovered from the `source/_components` directory; to create an anonymous `<x-`-style components, you only need to place a Blade template within that directory.
+В Jigsaw представления автоматически обнаруживаются из каталога `source/_components`; чтобы создать анонимные компоненты в стиле `<x-`, Вам нужно только поместить шаблон Blade в этот каталог.
 
-Class-based components can be manually registered using `$bladeCompiler->component()`, as detailed in the [Extending Blade with custom directives](#extending-blade-with-custom-directives) section below; or, they can be auto-discovered by using the `Components` namespace. To autoload class-based components that use the `Components` namespace, add an `autoload` entry to your `composer.json` file:
+Компоненты на основе классов могут быть зарегистрированы вручную с помощью `$bladeCompiler->component()`, как подробно описано в разделе [расширение Blade с помощью пользовательских директив](#расширение-blade-с-помощью-настраиваемых-директив) ниже; или они могут быть обнаружены автоматически с помощью пространства имен `Components`. Чтобы автоматически загружать компоненты на основе классов, которые используют пространство имен `Components`, добавьте запись `autoload` в свой файл `composer.json`:
 
 > _composer.json_
 
@@ -123,13 +123,13 @@ Class-based components can be manually registered using `$bladeCompiler->compone
 }
 ```
 
-... and then update Composer's autoload references by running `composer dump-autoload` in your terminal.
+...а затем обновите ссылки автозагрузки Composer, запустив `composer dump-autoload` в Вашем терминале.
 
-### Preventing layouts, partials & components from rendering
+### Предотвращение рендеринга макетов, частичных шаблонов и компонентов
 
-Since it's important that layouts, partials and components are never rendered on their own, you need to be able to tell Jigsaw when a file shouldn't be rendered.
+Поскольку важно, чтобы макеты, части и компоненты никогда не рендерились сами по себе, Вам необходимо указать Jigsaw, когда файл не должен отображаться.
 
-To prevent a file or folder from being rendered, simply prefix it with an underscore:
+Чтобы предотвратить рендеринг файла или папки, просто поставьте перед ними знак подчеркивания:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -143,9 +143,9 @@ To prevent a file or folder from being rendered, simply prefix it with an unders
     <div class="ellipsis">...</div>
 </div>
 
-Jigsaw gives you a `/_layouts` directory by default, but you can create any files or directories you need; anything prefixed with an underscore will not be rendered directly to `/build_local`.
+По умолчанию Jigsaw предоставляет Вам каталог `/_layouts`, но Вы можете создавать любые файлы или каталоги, которые Вам нужны; все, что имеет префикс с подчеркиванием, не будет отображаться непосредственно в `/build_local`.
 
-For example, if you wanted a place to store all of your partials, you could create a directory called `_partials`:
+Например, если Вам нужно место для хранения всех Ваших частичных данных, Вы можете создать каталог с именем `_partials`:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -161,15 +161,15 @@ For example, if you wanted a place to store all of your partials, you could crea
     <div class="ellipsis">...</div>
 </div>
 
-Since the `_partials` directory starts with an underscore, those files won't be rendered when you generate your site, but will still be available to `@include` in your other templates.
+Поскольку каталог `_partials` начинается с символа подчеркивания, эти файлы не будут отображаться при создании Вашего сайта, но по-прежнему будут доступны для `@include` в других Ваших шаблонах.
 
 ---
 
-### Extending Blade with custom directives
+### Расширение Blade с помощью настраиваемых директив
 
-Jigsaw gives you the ability to extend Blade with [custom directives](https://laravel.com/docs/7.x/blade#extending-blade), just as you can with Laravel. To do this, create a `blade.php` file at the root level of your Jigsaw project (at the same level as `config.php`), and return an array of directives keyed by the directive name, each returning a closure.
+Jigsaw дает Вам возможность расширить Blade с помощью [настраиваемых директив](https://laravel.com/docs/7.x/blade#extending-blade), так же, как Вы можете с Laravel. Для этого создайте файл `blade.php` на корневом уровне Вашего проекта Jigsaw (на том же уровне, что и `config.php`), и верните массив директив с ключом имени директивы, каждая из которых возвращает замыкание.
 
-For example, you can create a custom `@datetime($timestamp)` directive to format a given integer timestamp as a date in your Blade templates:
+Например, Вы можете создать специальную директиву `@datetime($timestamp)` для форматирования данной целочисленной метки времени как даты в Ваших шаблонах Blade:
 
 > _blade.php_
 
@@ -181,7 +181,7 @@ return [
 ];
 ```
 
-Alternatively, the `blade.php` file receives a variable named `$bladeCompiler`, which exposes an instance of `\Illuminate\View\Compilers\BladeCompiler`. With this, you can create custom Blade directives, [aliased components](https://laravel.com/docs/7.x/blade#extending-blade), named `@include` statements, or other extended Blade control structures:
+В качестве альтернативы файл `blade.php` получает переменную с именем `$bladeCompiler`, которая предоставляет экземпляр `\Illuminate\View\Compilers\BladeCompiler`. С его помощью Вы можете создавать собственные директивы Blade, [компоненты с псевдонимами](https://laravel.com/docs/7.x/blade#extending-blade) с именами `@include` или другие расширенные управляющие структуры Blade:
 
 > _blade.php_
 
@@ -202,29 +202,29 @@ $bladeCompiler->include('includes.copyright');
 > _page.blade.php_
 
 ```php
-/** before */
+/** до */
 
 @component('_components.alert')
     Pay attention to this!
 @endcomponent
 
-@include('_partials.meta.copyright', ['year' => '2018'])
+@include('_partials.meta.copyright', ['year' => '2021'])
 
 
-/** after */
+/** после */
 
 @alert
     Pay attention to this!
 @endalert
 
-@copyright(['year' => '2018'])
+@copyright(['year' => '2021'])
 ```
 
 ---
 
-### Specifying Blade hint paths
+### Указание путей подсказки Blade
 
-To use Blade hint paths/namespaces in your markup (for example, `email:components::section`), specify the path to the directory using the `viewHintPaths` key in `config.php`:
+Чтобы использовать пути/пространства имен Blade-подсказок в разметке (например, `email:components::section`), укажите путь к каталогу с помощью ключа `viewHintPaths` в `config.php`:
 
 > _config.php_
 
