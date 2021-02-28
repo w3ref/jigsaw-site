@@ -3,15 +3,15 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Building & Previewing
+## Сборка и предварительный просмотр
 
-When you'd like to generate your site, run the `build` command from within your project root:
+Когда Вы захотите сгенерировать свой сайт, запустите команду `build` из корня Вашего проекта:
 
 `$ ./vendor/bin/jigsaw build`
 
-Jigsaw will generate your static HTML and place it in the `/build_local` directory by default.
+Jigsaw сгенерирует Ваш статический HTML и по умолчанию поместит его в каталог `/build_local`.
 
-Using the default site structure, `/build_local` will look like this:
+Используя структуру сайта по умолчанию, `/build_local` будет выглядеть так:
 
 <div class="files">
     <div class="folder folder--open focus">build_local
@@ -37,28 +37,28 @@ Using the default site structure, `/build_local` will look like this:
     <div class="ellipsis">...</div>
 </div>
 
-### Previewing with PHP
+### Предварительный просмотр с помощью PHP
 
-To quickly preview your site, use the `serve` command:
+Для быстрого предпросмотра Вашего сайта, используйте команду `serve`:
 
 `$ ./vendor/bin/jigsaw serve`
 
-You can now view your site at `http://localhost:8000` in your browser.
+Теперь Вы можете просматривать свой сайт по адресу `http://localhost:8000` в браузере.
 
-You can also optionally specify the environment and port to serve like so:
+Вы также можете при желании указать среду и порт для обслуживания следующим образом:
 
 `$ ./vendor/bin/jigsaw serve production --port=8080`
 
-This will serve your `/build_production` directory at `http://localhost:8080`.
+Это будет обслуживать Ваш каталог `/build_production` по адресу `http://localhost:8080`.
 
-### Previewing with Browsersync
+### Предварительный просмотр с Browsersync
 
-If you are [using Laravel Mix to compile your assets](/docs/compiling-assets) (which is included in the default Jigsaw setup), you can preview your site with Browsersync by simply running:
+Если Вы [используете Laravel Mix для компиляции своих ресурсов](/docs/compiling-assets) (который включен в настройку Jigsaw по умолчанию), Вы можете предварительно просмотреть свой сайт с помощью Browsersync, просто запустив:
 
 ```
 $ npm run watch
 ```
 
-_(If you haven't already, you'll need to run `npm install` before running `npm run watch`.)_
+_(Если Вы еще этого не сделали, Вам нужно запустить `npm install` перед запуском `npm run watch`.)_
 
-Browsersync will automatically open a new browser tab and reload the page every time you make a change. Very helpful for previewing your changes quickly!
+Browsersync автоматически открывает новую вкладку браузера и перезагружает страницу каждый раз, когда Вы вносите изменения. Очень полезно для быстрого просмотра Ваших изменений!

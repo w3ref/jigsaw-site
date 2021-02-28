@@ -3,14 +3,14 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Building & Previewing](/docs/building-and-previewing)
-## Environments
+#### [Сборка и предварительный просмотр](/docs/building-and-previewing)
+## Среды
 
-Often you might want to use different site variables in your development and production environments. For example, in production you might want to render your Google Analytics tracking snippet, but not include it in development so you don't skew your results.
+Часто Вам может потребоваться использовать разные переменные сайта в средах разработки и продакшена. Например, в продакшене Вы можете захотеть отобразить фрагмент отслеживания Google Analytics, но не включать его в разработку, чтобы не искажать результаты.
 
-Jigsaw makes this simple by allowing you to create additional `config.php` files for your different environments.
+Jigsaw упрощает это, позволяя создавать дополнительные файлы `config.php` для различных сред.
 
-Say your base `config.php` file looks like this:
+Скажем, Ваш базовый файл `config.php` выглядит так:
 
 ```php
 <?php
@@ -21,7 +21,7 @@ return [
 ];
 ```
 
-You can override the `staging` variable in your production environment by creating a new file called `config.production.php`:
+Вы можете переопределить переменную `staging` в своей производственной среде, создав новый файл с именем `config.production.php`:
 
 ```php
 <?php
@@ -31,20 +31,20 @@ return [
 ];
 ```
 
-This file is _merged_ on top of `config.php`, so you only need to specify the variables that you are changing.
+Этот файл _объединен_ поверх `config.php`, поэтому Вам нужно указать только те переменные, которые Вы изменяете.
 
-### Building files for a specific environment
+### Сборка файлов для конкретной среды
 
-To build files for a specific environment, just pass the environment name as an argument when running the `build` command:
+Чтобы собрать файлы для конкретной среды, просто передайте имя среды в качестве аргумента при запуске команды `build`:
 
 ```
 $ ./vendor/bin/jigsaw build production
 ```
 
-Alternatively, if you are [using Laravel Mix to compile your assets](/docs/compiling-assets), you can run the `production` script found in `package.json`:
+В качестве альтернативы, если Вы [используете Laravel Mix для компиляции Ваших ресурсов](/docs/compiling-assets), Вы можете запустить сценарий `production` из `package.json`:
 
 ```
 $ npm run production
 ```
 
-This will generate your site into a new folder called `build_production`, leaving your `build_local` folder untouched.
+Ваш сайт будет сгенерирован в новую папку с именем `build_production`, а ваша папка `build_local` останется нетронутой.
