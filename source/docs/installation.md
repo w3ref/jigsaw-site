@@ -3,46 +3,46 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Installation
+## Установка
 
-### System Requirements
+### Системные Требования
 
-To use Jigsaw, you need to have PHP (minimum version 7.3) and [Composer](https://getcomposer.org/) installed on your machine. You'll also optionally need Node.js and NPM installed if you want to use [Laravel Mix](https://laravel.com/docs/7.x/mix) to compile your CSS and Javascript.
+Чтобы использовать Jigsaw, на Вашем компьютере должны быть установлены PHP (минимальная версия 7.3) и [Composer](https://getcomposer.org/). Вам также необязательно потребуется установить Node.js и NPM, если Вы хотите использовать [Laravel Mix](https://laravel.com/docs/7.x/mix) для компиляции CSS и Javascript.
 
 ---
 
-### 1. Create the Project Directory
+### 1. Создать каталог проекта
 
-First, create a new directory for your site:
+Сначала создайте новый каталог для своего сайта:
 
 ```
 $ mkdir my-site
 ```
 
-### 2. Install Jigsaw via Composer
+### 2. Установите Jigsaw через Composer
 
-Next, navigate to your new project directory and install Jigsaw using Composer:
+Затем перейдите в каталог Вашего нового проекта и установите Jigsaw с помощью Composer:
 
 ```
 $ cd my-site
 $ composer require tightenco/jigsaw
 ```
 
-### 3. Initialize your Project
+### 3. Инициализируйте свой проект
 
-Finally, from your project directory, run Jigsaw's `init` command to scaffold the default directory structure:
+Наконец, из каталога Вашего проекта запустите команду Jigsaw `init`, чтобы сформировать структуру каталогов по умолчанию:
 
 ```
 $ ./vendor/bin/jigsaw init
 ```
 
-Alternatively, get up and running quickly by using a [starter template](/docs/starter-templates), which starts you off with a fully-configured, professionally-designed site, ready for you to customize with your content. You can use one of Jigsaw's built-in templates for a blog or an open source documentation site, or [use a third-party template](/docs/starter-templates#installing-a-third-party-starter-template).
+В качестве альтернативы, быстро приступите к работе, используя [стартовый шаблон](/docs/starter-templates), который открывает вам полностью сконфигурированный, профессионально разработанный сайт, готовый к настройке с вашим контентом. Вы можете использовать один из встроенных шаблонов Jigsaw для блога или сайта документации с открытым исходным кодом или [использовать сторонний шаблон](/docs/starter-templates#установка-стороннего-начального-шаблона).
 
 ```
 $ ./vendor/bin/jigsaw init blog
 ```
 
-or
+или
 
 ```
 $ ./vendor/bin/jigsaw init docs
@@ -50,9 +50,9 @@ $ ./vendor/bin/jigsaw init docs
 
 ---
 
-### Directory Structure
+### Структура каталогов
 
-By default, Jigsaw gives you the following directory structure:
+По умолчанию Jigsaw предоставляет следующую структуру каталогов:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -93,13 +93,13 @@ By default, Jigsaw gives you the following directory structure:
     <div class="file">webpack.mix.js</div>
 </div>
 
-The `/source` directory contains the actual contents of your site. This is where all of your site's pages, CSS, Javascript, images, etc. will be kept.
+Каталог `/source` содержит фактическое содержимое Вашего сайта. Здесь будут храниться все страницы Вашего сайта, CSS, Javascript, изображения и т. д.
 
-At the root of the directory, Jigsaw provides a `config.php` file where you can specify configuration settings for your site, along with `webpack.mix.js` for settings related to compiling your assets.
+В корне каталога Jigsaw предоставляет файл `config.php`, в котором Вы можете указать параметры конфигурации для своего сайта, а также `webpack.mix.js` для настроек, связанных с компиляцией Ваших ресурсов.
 
-Next, learn about [building and previewing your site](/docs/building-and-previewing).
+Затем узнайте о [создании и предварительном просмотре Вашего сайта](/docs/building-and-previewing).
 
 ---
 <div class="pt-3"></div>
 
-> Why are there two `assets` directories in `/source`, one prefixed with an underscore? Find out in the [Compiling Assets](/docs/compiling-assets) section.
+> Почему в `/source` есть два каталога `assets`, один с префиксом подчеркивания? Узнайте в разделе [Компиляция ресурсов](/docs/compiling-assets) section.
