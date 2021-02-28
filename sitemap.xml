@@ -2,242 +2,247 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">&#13;
  <url>
   <loc>https://jigsaw.su/404.html</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
+  <changefreq>daily</changefreq>
+ </url>
+ <url>
+  <loc>https://jigsaw.su/CNAME</loc>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\build\css/main.css</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\build\js/app.js</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\build/mix-manifest.json</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/404.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/GitHub.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/browser-illustration.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/browsers-illustration.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/icon-arrow.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/icon-search.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/init-options.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/jigsaw-hero.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/jigsaw-logo.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/jigsaw-logo.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/jigsaw-type.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/less-logo.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/mix-preprocessors.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/sass-logo.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/tailwind-logo.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/template-blog.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/template-docs.png</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/assets\img/webpack-logo.svg</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/building-and-previewing-environments</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/building-and-previewing</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-extending-parent-templates</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-filtering</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-mapping</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-pagination</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-paths</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-remote-collections</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-sorting</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections-variables-and-functions</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/collections</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/compiling-assets</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/content-blade</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/content-markdown</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/content-other-file-types</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/content</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/custom-404-page</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/deploying-your-site</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/event-listeners</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/helper-methods</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/installation</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/page-metadata</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/pretty-urls</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/site-variables</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su/docs/starter-templates</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://jigsaw.su</loc>
-  <lastmod>2021-03-01T00:17:47+03:00</lastmod>
+  <lastmod>2021-03-01T00:26:10+03:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
