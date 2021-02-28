@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Extending Parent Templates
+#### [Коллекции](/docs/collections)
+## Расширение родительских шаблонов
 
 To display each of your collection items on their own page, you need to specify a parent template. You can do this in the `extends` key of the YAML front matter, or with the `@extends` directive in a Blade file:
 

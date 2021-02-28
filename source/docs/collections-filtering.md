@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Filtering
+#### [Коллекции](/docs/collections)
+## Фильтрация
 
 You can filter collection items by adding a `filter` key to the collection's array in `config.php`, and specifying a callable that accepts the collection item and returns a boolean. Items that return `false` from the filter will not be built.
 

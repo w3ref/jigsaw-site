@@ -3,15 +3,15 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Collections
+## Коллекции
 
-Jigsaw provides powerful features for working with groups of related pages, or _collections_. Collections give you the ability to access your content at an aggregate level, enabling you to easily add near-dynamic features like menus, pagination, categories, and tags to your static site.
+Jigsaw предоставляет мощные возможности для работы с группами связанных страниц или _коллекциями_. Коллекции дают Вам возможность получать доступ к Вашему контенту на агрегированном уровне, позволяя легко добавлять почти динамические функции, такие как меню, разбиение на страницы, категории и теги на Ваш статический сайт.
 
-Collections can be used to generate pages of related content—for example, blog posts or articles that are sorted by date, with an index page displaying summaries of the five most recent posts—or for embedding related blocks of content _within_ a page, for content like staff bios, product descriptions, or a portfolio of projects.
+Коллекции можно использовать для создания страниц связанного контента - например, сообщений в блогах или статей, которые отсортированы по дате, с индексной страницей, отображающей сводку пяти самых последних сообщений, - или для встраивания связанных блоков содержимого _в_ страницу, для содержимого например, биографии сотрудников, описания продуктов или портфолио проектов.
 
-### Defining a Collection
+### Определение коллекции
 
-To define a collection, add an array named `collections` to `config.php`. Each collection should be indicated by the name of the collection (typically, plural), followed by an array of settings. For example:
+Чтобы определить коллекцию, добавьте в `config.php` массив с именем `collections`. Каждая коллекция должна обозначаться именем коллекции (обычно во множественном числе), за которым следует массив настроек. Например:
 
 > _config.php_
 
@@ -34,7 +34,7 @@ return [
 ];
 ```
 
-Jigsaw will look for collection items in a directory with the same name as your collection, preceded by an underscore: in this example, `_people` and `_posts`. Collection items can be Markdown or Blade files, or even [Blade/Markdown hybrid](/docs/content-other-file-types) files.
+Jigsaw будет искать элементы коллекции в каталоге с тем же именем, что и Ваша коллекция, которому предшествует символ подчеркивания: в этом примере это `_people` и `_posts`. Элементы коллекции могут быть файлами Markdown или Blade или даже [гибридными Blade/Markdown](/docs/content-other-file-types) файлами.
 
 <div class="files">
     <div class="folder folder--open">source
@@ -68,7 +68,7 @@ Jigsaw will look for collection items in a directory with the same name as your 
     <div class="file">webpack.mix.js</div>
 </div>
 
-In `config.php`, the array where you define your collection can contain [path](/docs/collections-paths) and [sort](/docs/collections-sorting) settings for the collection, as well as [variables and helper functions](/docs/collections-variables-and-functions/). None of these elements are required, however; if omitted, default path and sort settings will be used. In fact, for the simplest configuration using default settings and no variables or functions, you can define a collection with simply its name:
+В массив`config.php`, в котором Вы определяете свою коллекцию, может содержать параметры [путь](/docs/collections-paths) и [сортировка](/docs/collections-sorting) для коллекции, а также [переменные и вспомогательные функции](/docs/collections-variables-and-functions/). Однако ни один из этих элементов не требуется; если не указано, будут использоваться путь по умолчанию и настройки сортировки. Фактически, для простейшей конфигурации с использованием настроек по умолчанию и без переменных или функций Вы можете определить коллекцию просто по ее имени:
 
 > _config.php_
 
@@ -80,22 +80,22 @@ return [
 ];
 ```
 
-### Generating Collection Pages
+### Создание страниц коллекции
 
-If you'd like to generate an individual page for each of your collection items—for example, a page for each blog post—specify a [parent template](/docs/collections-extending-parent-templates) file in the `extends` key of the YAML front matter, or with the `@extends` directive in a Blade file, just as you would with a regular Jigsaw page. For example:
+Если Вы хотите создать отдельную страницу для каждого из элементов коллекции, например страницу для каждого сообщения в блоге, укажите файл [родительский шаблон](/docs/collections-extending-parent-templates) в файле ключ `extends` в YAML или директивой `@extends` в файле Blade, как если бы Вы использовали обычную страницу Jigsaw. Например:
 
 > _my-first-post.md_
 
 ```
 ---
 extends: _layouts.post
-title: My First Blog Post
+title: Моя первая запись в блоге
 author: Keith Damiani
-date: 2017-03-23
+date: 2021-02-28
 section: content
 ---
 
-This post is *profoundly* interesting.
+Этот пост *глубоко* интересен.
 ```
 
 > __layouts/post.blade.php_
@@ -111,17 +111,16 @@ This post is *profoundly* interesting.
 @endsection
 ```
 
-### Accessing Collection Items
+### Доступ к элементам коллекции
 
-In any Blade template, you have access to each of your collections using a variable with the collection's name. This variable references an object that contains all the elements in your collection, and can be iterated over to
-access individual collection items. The collection variable also behaves as if it were an [Illuminate Collection](https://laravel.com/docs/7.x/collections) in Laravel, meaning you have access to all of Laravel's standard collection methods like `count()`, `filter()`, and `where()`.
+В любом шаблоне Blade у Вас есть доступ к каждой из Ваших коллекций, используя переменную с именем коллекции. Эта переменная ссылается на объект, который содержит все элементы в Вашей коллекции, и может повторяться для доступа к отдельным элементам коллекции. Переменная коллекции также ведет себя так, как если бы она была [Illuminate Collection](https://laravel.com/docs/7.x/collections) в Laravel, что означает, что у Вас есть доступ ко всем стандартным методам сбора Laravel, таким как `count()`, `filter()` и `where()`.
 
-For example, to create a list of the titles for all your blog posts, you can iterate over the `$posts` object in a Blade `@foreach` loop, and display the `title` property that you defined in the YAML front matter of each post:
+Например, чтобы создать список заголовков для всех Ваших сообщений в блоге, Вы можете перебрать объект `$posts` в цикле Blade `@foreach` и отобразить свойство `title`, которое Вы определили во вступительной части YAML каждого сообщения:
 
 > _posts.blade.php_
 
 ```
-<p>Total of {{ $posts->count() }} posts</p>
+<p>Всего постов: {{ $posts->count() }}</p>
 
 <ul>
 @foreach ($posts as $post)
@@ -130,7 +129,7 @@ For example, to create a list of the titles for all your blog posts, you can ite
 </ul>
 ```
 
-For example, assuming that all posts have on their YAML front matter the property `author`, to filter all posts from a particular author, you can filter the collection of `$posts` and generate a new collection:
+Например, предполагая, что все сообщения имеют в своем YAML-фронте свойство `author`, чтобы отфильтровать все сообщения от определенного автора, Вы можете отфильтровать коллекцию `$posts` и создать новую коллекцию:
 
 > _author\_posts.blade.php_
 
@@ -148,15 +147,15 @@ $authorPosts = $posts->filter(function ($value, $key) use ($page) {
 @endif
 ```
 
-### Collection Metadata
+### Метаданные коллекции
 
-In addition to the [metadata](/docs/page-metadata/) available for every page, such as `getPath()`, `getUrl()`, and `getFilename()`, collection items have access to a few additional functions:
+Помимо [метаданных](/docs/page-metadata/), доступных для каждой страницы, таких как `getPath()`, `getUrl()` и `getFilename()`, элементы коллекции имеют доступ к нескольким дополнительным функции:
 
-- `getContent()` returns the main content of the collection item, i.e. the body of the Markdown file (currently, `getContent()` is available for Markdown files only)
-- `getCollection()` returns the name of the collection
-- `getPrevious()` and `getNext()` give you the adjacent items in the collection, based on the collection's default [sort order](/docs/collections-sorting)
-- `getFirst()` returns the first item of a collection (as does the Laravel collection method `first()`)
-- `getLast()` returns the last item of a collection (as does the Laravel collection method `last()`)
+- `getContent()` возвращает основное содержимое элемента коллекции, то есть тело файла Markdown (в настоящее время `getContent()` доступен только для файлов Markdown)
+- `getCollection()` возвращает имя коллекции
+- `getPrevious()` и `getNext()` предоставляют вам соседние элементы в коллекции на основе [порядка сортировки](/docs/collections-sorting) коллекции по умолчанию
+- `getFirst()` возвращает первый элемент коллекции (как и метод коллекции Laravel `first()`)
+- `getLast()` возвращает последний элемент коллекции (как и метод коллекции Laravel `last()`)
 
 > __layouts/post.blade.php_
 
@@ -169,7 +168,7 @@ In addition to the [metadata](/docs/page-metadata/) available for every page, su
     @yield('content')
 
     @if ($page->getNext())
-        <p>Read my next post:
+        <p>Прочтите мой следующий пост:
             <a href="{{ $page->getNext()->getPath() }}">{{ $page->getNext()->title }}</a>
         </p>
     @endif

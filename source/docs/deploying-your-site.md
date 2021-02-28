@@ -22,7 +22,7 @@ section: documentation_content
 2. Зафиксируйте папку `build_production` в Вашем репозитории
 
     ```
-    $ git add build_production && git commit -m "Build for deploy"
+    $ git add build_production && git commit -m "Сборка для деплоя"
     ```
 
 3. Используйте `git subtree push`, чтобы _просто_ переместить папку `build_production` в ветку `gh-pages`

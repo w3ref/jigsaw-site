@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Paths
+#### [Коллекции](/docs/collections)
+## Пути
 
 ### Default Path Setting
 

@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Pagination
+#### [Коллекции](/docs/collections)
+## Пагинация
 
 You can create a Blade template that displays your collection items in a paginated format by including a `pagination` key in the template's YAML front matter. The pagination header should include the `collection` name and the `perPage` count:
 

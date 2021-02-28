@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Sorting
+#### [Коллекции](/docs/collections)
+## Сортировка
 
 You can control the order in which your collection items are sorted. When iterating over your collection in a `@foreach` loop, the items will be returned in the order you specify.
 

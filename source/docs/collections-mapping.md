@@ -3,8 +3,8 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Mapping
+#### [Коллекции](/docs/collections)
+## Картография
 
 You can map over your collection items by adding a `map` key to the collection's array in `config.php`, and specifying a callback that accepts the collection item. Each item is an instance of the `TightenCo\Jigsaw\Collection\CollectionItem` class, from which you can instantiate your own custom class using the static `fromItem()` method. Your custom class can include helper methods that might be too complex for storing in your `config.php` array.
 
