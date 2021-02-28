@@ -3,11 +3,11 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Site Variables
+## Переменные сайта
 
-Anything you add to the array in `config.php` will be made available in all of your templates, as a property of the `$page` object.
+Все, что Вы добавляете в массив в `config.php`, будет доступно во всех Ваших шаблонах как свойство объекта `$page`.
 
-For example, if your `config.php` looks like this:
+Например, если Ваш файл `config.php` выглядит так:
 
 ```php
 <?php
@@ -17,21 +17,21 @@ return [
 ];
 ```
 
-...you can use that variable in any of your templates like so:
+...Вы можете использовать эту переменную в любом из Ваших шаблонов следующим образом:
 
 ```
 @extends('_layouts.master')
 
 @section('content')
-    <p>Contact us at {{ $page->contact_email }}</p>
+    <p>Свяжитесь с нами по {{ $page->contact_email }}</p>
 @stop
 ```
 
-If you prefer, site variables can also be accessed as arrays:
+При желании переменные сайта также могут быть доступны в виде массивов:
 
 ```
-<p>Contact us at {{ $page['contact_email'] }}</p>
+<p>Свяжитесь с нами по {{ $page['contact_email'] }}</p>
 ```
 
-Jigsaw also supports environment-specific site variables, which you can learn more about [here](/docs/environments/).
+Jigsaw также поддерживает переменные сайта, зависящие от среды, о которых Вы можете узнать больше [здесь](/docs/environments/).
 
