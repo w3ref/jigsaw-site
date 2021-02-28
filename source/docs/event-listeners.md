@@ -3,41 +3,41 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Event Listeners
+## Слушатели событий
 
-Jigsaw provides three events that you can hook into, in order to run custom code before and after your build is processed.
+Jigsaw предоставляет три события, к которым Вы можете подключиться, чтобы запускать собственный код до и после обработки Вашей сборки.
 
-- **A `beforeBuild` event is fired before any `source` files have been processed**. This gives you an opportunity to programmatically modify `config.php` variables, fetch data from external sources, or modify files in the `source` folder.
+- **Событие `beforeBuild` запускается перед обработкой любых файлов `source`**. Это дает Вам возможность программно изменять переменные `config.php`, получать данные из внешних источников или изменять файлы в папке `source`.
 
-- **An `afterCollections` event is fired after any collections have been processed, but before any output files are built.** This gives you access to the parsed contents of collection items.
+- **Событие `afterCollections` запускается после обработки любых коллекций, но до создания любых выходных файлов.** Это дает Вам доступ к проанализированному содержимому элементов коллекции.
 
-- **An `afterBuild` event is fired after the build is complete, and all output files have been written to the `build` directory.** This allows you to obtain a list of the output file paths (to use, for example, when creating a `sitemap.xml` file), programmatically create output files, or take care of any other post-processing tasks.
+- **Событие `afterBuild` запускается после завершения сборки, и все выходные файлы были записаны в каталог `build`.** Это позволяет вам получить список путей к выходным файлам (для использования, например, при создании файла `sitemap.xml`), программно создавайте файлы вывода или позаботьтесь о любых других задачах постобработки.
 
 ---
 
-### Registering event listeners as closures
+### Регистрация слушателей событий как замыканий
 
-To add an event listener, head over to `bootstrap.php`. There, you can access the event bus with the `$events` variable, adding listeners by calling the name of the event:
+Чтобы добавить прослушиватель событий, перейдите в `bootstrap.php`. Там Вы можете получить доступ к шине событий с помощью переменной `$events`, добавив слушателей, вызвав имя события:
 
 >_bootstrap.php_
 
 ```php
 $events->beforeBuild(function ($jigsaw) {
-   // your code here
+   // ваш код здесь
 });
 
 $events->afterCollections(function ($jigsaw) {
-   // your code here
+   // ваш код здесь
 });
 
 $events->afterBuild(function ($jigsaw) {
-   // your code here
+   // ваш код здесь
 });
 ```
 
-At its simplest, you can define your event listeners as closures that accept an instance of `Jigsaw`. The `Jigsaw` instance contains a number of [helper methods](#helperMethods) to allow you to access information about the site and interact with files and config settings.
+В простейшем случае Вы можете определить слушателей событий как замыкания, которые принимают экземпляр Jigsaw. Экземпляр `Jigsaw` содержит ряд [вспомогательных методов](#вспомогательные-методы), позволяющих Вам получить доступ к информации о сайте и взаимодействовать с файлами и настройками конфигурации.
 
-For example, the following listener will fetch the current weather from an external API, and add it as a variable to `config.php`, where it can be referenced in your templates:
+Например, следующий прослушиватель получит текущую погоду из внешнего API и добавит ее как переменную в `config.php`, где на нее можно будет ссылаться в Ваших шаблонах:
 
 >_bootstrap.php_
 
@@ -55,16 +55,16 @@ $events->beforeBuild(function ($jigsaw) {
 
 ---
 
-### Registering event listeners as classes
+### Регистрация слушателей событий как классов
 
-For more complex event listeners, you can specify the name of a class, or an array of class names, instead of a closure. These classes can either live directly in `bootstrap.php` or in a separate directory. Listener classes should countain a `handle()` method with accepts an instance of `Jigsaw`:
+Для более сложных прослушивателей событий Вы можете указать имя класса или массив имен классов вместо замыкания. Эти классы могут находиться либо непосредственно в `bootstrap.php`, либо в отдельном каталоге. Классы слушателей должны иметь метод `handle()`, который принимает экземпляр `Jigsaw`:
 
 >_bootstrap.php_
 
 ```php
 $events->afterBuild(GenerateSitemap::class);
 
-// or
+// или
 
 $events->afterBuild([GenerateSitemap::class, SendNotification::class]);
 ```
@@ -100,9 +100,9 @@ class GenerateSitemap
 }
 ```
 
-If there are multiple listeners defined for a single event, they will be fired in the order in which they were defined.
+Если для одного события определено несколько слушателей, они будут запущены в том порядке, в котором они были определены.
 
-To call a listener class that lives in a separate directory, the class namespace should be added to a `composer.json` file:
+Чтобы вызвать класс слушателя, который находится в отдельном каталоге, пространство имен класса должно быть добавлено в файл `composer.json`:
 
 >_composer.json_
 
@@ -117,106 +117,106 @@ To call a listener class that lives in a separate directory, the class namespace
 ```
 
 ---
-<a name="helperMethods"></a>
-### Helper methods in $jigsaw
+<a name="вспомогательные-методы"></a>
+### Вспомогательные методы в $jigsaw
 
-The instance of `Jigsaw` available to each event listener includes the following helper methods:
+Экземпляр `Jigsaw`, доступный каждому слушателю событий, включает следующие вспомогательные методы:
 
 ---
 
 `getEnvironment()`
 
-Returns the current environment, e.g. `local` or `production`
+Возвращает текущую среду, например `local` или `production`.
 
 ---
 
 `getCollections()`
 
-In `beforeBuild`, returns an array of collection names; in **afterCollections** and **afterBuild**, returns a collection of collection items, keyed by collection name.
+В `beforeBuild` возвращает массив имен коллекций; в **afterCollections** и **afterBuild** возвращает коллекцию элементов коллекции, привязанную к имени коллекции.
 
 ---
 
-`getCollection($collection)` _(**afterCollections** and **afterBuild** only)_
+`getCollection($collection)` _(только **afterCollections** и **afterBuild**)_
 
-Returns the items in a particular collection, keyed by their `source` filenames. Each item contains the variables defined for the collection item, as well as access to all collection item methods like `getContent()`.
+Возвращает элементы в конкретной коллекции, привязанные к их именам файлов `source`. Каждый элемент содержит переменные, определенные для элемента коллекции, а также доступ ко всем методам элемента коллекции, таким как `getContent()`.
 
 ---
 
 `getConfig()`
 
-Returns the settings array from `config.php`
+Возвращает массив настроек из `config.php`.
 
 ---
 
 `getConfig($key)`
 
-Returns a specific setting from `config.php`. <br>Dot notation (e.g. `getConfig('collections.posts.items')` can be used to get nested items.
+Возвращает конкретную настройку из `config.php`. <br>Точечная нотация (например, `getConfig('collections.posts.items')` может использоваться для получения вложенных элементов.
 
 ---
 
 `setConfig($key, $value)`
 
-Adds or modifies a setting in `config.php`. <br>Dot notation can be used to set nested items.
+Добавляет или изменяет параметр в `config.php`. <br>Точечная нотация может использоваться для установки вложенных элементов.
 
 ---
 
 `getSourcePath()`
 
-Returns the absolute path to the `source` directory
+Возвращает абсолютный путь к каталогу `source`.
 
 ---
 
 `setSourcePath($path)`
 
-Sets the path to the `source` directory
+Устанавливает путь к каталогу `source`.
 
 ---
 
 `getDestinationPath()`
 
-Returns the absolute path to the `build` directory
+Возвращает абсолютный путь к каталогу `build`.
 
 ---
 
 `setDestinationPath($path)`
 
-Sets the path to the `build` directory
+Устанавливает путь к каталогу `build`.
 
 ---
 
-`getPages()` _(**afterBuild** only)_
+`getPages()` _(**afterBuild** только)_
 
-Returns a collection of all output files that were generated. For each item, the key contains the path of the output file relative to the `build` directory (e.g. `/posts/my-first-post`), while the value contains the contents of the `$page` variable for the source file. This exposes the [page metadata](/docs/page-metadata) functions such as `getPath()` and `getModifiedTime()` for each page, as well as any variables defined in the page's YAML header.
+Возвращает коллекцию всех сгенерированных выходных файлов. Для каждого элемента ключ содержит путь к выходному файлу относительно каталога `build` (например, `/posts/my-first-post`), а значение содержит содержимое переменной `$page` для источника. файл. Это предоставляет функции [метаданные страницы](/docs/page-metadata), такие как `getPath()` и `getModifiedTime()` для каждой страницы, а также любые переменные, определенные в заголовке YAML страницы.
 
 ---
 
-`getOutputPaths()` _(**afterBuild** only)_
+`getOutputPaths()` _(**afterBuild** только)_
 
-Returns a collection of paths to the output files that were generated, relative to the `build` directory
+Возвращает коллекцию путей к сгенерированным выходным файлам относительно каталога `build`.
 
 ---
 
 `readSourceFile($fileName)`
 
-Returns the contents of a file in the `source` directory
+Возвращает содержимое файла из каталога `source`.
 
 ---
 
 `writeSourceFile($fileName, $contents)`
 
-Allows you to write a file to the `source` directory
+Позволяет записать файл в каталог `source`.
 
 ---
 
 `readOutputFile($fileName)`
 
-Returns the contents of a file in the `build` directory
+Возвращает содержимое файла из каталога `build`.
 
 ---
 
 `writeOutputFile($fileName, $contents)`
 
-Allows you to write a file to the `build` directory
+Позволяет записать файл в каталог `build`.
 
 ---
 
