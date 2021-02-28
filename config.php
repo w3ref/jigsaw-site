@@ -2,6 +2,6 @@
 
 return [
     'production' => false,
-    'baseUrl' => 'http://jigsaw-site.test',
+    'baseUrl' => 'http://jigsaw.docs',
     'navigation' => include_once('./navigation.php'),
 ];
