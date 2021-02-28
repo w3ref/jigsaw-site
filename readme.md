@@ -1,25 +1,25 @@
 ![](source/assets/img/jigsaw-hero.png)
 
-# Jigsaw Site and Docs
+# Jigsaw Сайт И Документация
 
-## Basic Setup
+## Простая установка
 
-1. Install npm dependencies:
+1. Установить зависимости npm:
 
     `$ npm install`
 
-1. Install composer dependencies:
+1. Установить зависимости composer:
 
     `$ composer install`
 
-1. Build the site:
+1. Собрать сайт:
 
     `$ npm run dev`
 
-1. To preview at `http://localhost:3000`:
+1. Для предварительного просмотра на `http://localhost:3000`:
 
     `$ php -S localhost:3000 -t build_local`
 
-> **Pro Tip:** You can watch for asset changes and recompile automatically by running:
+> **Совет от профессионалов:** Вы можете следить за изменениями ресурсов и автоматически перекомпилировать, запустив:
 >
 > `$ npm run watch`
