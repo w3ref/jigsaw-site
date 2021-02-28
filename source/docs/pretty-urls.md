@@ -3,11 +3,11 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Pretty URLs
+## Красивые URL-адреса
 
-By default, any Blade files _not_ named `index.blade.php` are rendered as `index.html` in a subfolder named after the original file.
+По умолчанию все Blade-файлы, _не_ именованные `index.blade.php`, отображаются как `index.html` в подпапке, названной в честь исходного файла.
 
-For example, if you have a file named `about-us.blade.php` in your `/source` directory:
+Например, если у Вас есть файл с именем `about-us.blade.php` в каталоге `/source`:
 
 <div class="files">
     <div class="folder folder--open">source
@@ -21,7 +21,7 @@ For example, if you have a file named `about-us.blade.php` in your `/source` dir
     <div class="ellipsis">...</div>
 </div>
 
-...it will be rendered as `index.html` in the `/build/about-us` directory:
+...он будет отображаться как `index.html` в каталоге `/build/about-us`:
 
 <div class="files">
     <div class="folder folder--open">build_local
@@ -37,8 +37,8 @@ For example, if you have a file named `about-us.blade.php` in your `/source` dir
 </div>
 
 
-This means your "About us" page will be available at `http://example.com/about-us/` instead of `http://example.com/about-us.html`.
+Это означает, что ваша страница «О нас» будет доступна по адресу `http://example.com/about-us/` вместо `http://example.com/about-us.html`.
 
-### Disabling Pretty URLs
+### Отключение красивых URL-адресов
 
-If you need to disable this behavior, use the `--pretty=false` option when building your site.
+Если Вам нужно отключить это поведение, используйте параметр `--pretty=false` при создании Вашего сайта.
