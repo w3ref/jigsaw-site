@@ -3,13 +3,13 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Custom 404 Page
+## Пользовательская страница 404
 
-You can create a custom 404 error page to display when someone tries to access a page on your site that does not exist. How you do this depends on where your site is hosted.
+Вы можете создать настраиваемую страницу ошибки 404 для отображения, когда кто-то пытается получить доступ к несуществующей странице Вашего сайта. Как Вы это делаете, зависит от того, где размещен Ваш сайт.
 
-### Using GitHub Pages or Netlify
+### Использование GitHub Pages или Netlify
 
-Some hosts, like GitHub Pages and Netlify, are automatically configured to look for a file named `404.html` at the root level of your site. If your Jigsaw site is using [pretty URLs](/docs/pretty-urls), you can specify a `permalink` in the file for your custom 404 page so that the `.html` extension is preserved:
+Некоторые хосты, такие как GitHub Pages и Netlify, автоматически настраиваются для поиска файла с именем `404.html` на корневом уровне Вашего сайта. Если Ваш сайт Jigsaw использует [красивые URL-адреса](/docs/pretty-urls), Вы можете указать `permalink` в файле для своей пользовательской страницы 404, чтобы сохранить расширение `.html`:
 
 > _source/404.md_
 
@@ -20,16 +20,16 @@ section: content
 permalink: 404.html
 ---
 
-### Sorry, that page does not exist.
+### Извините, данная страница не существует.
 ```
 
-Note that YAML front matter can also be used in Blade files, so you can accomplish the same thing using a Blade file named `404.blade.php`.
+Обратите внимание, что передняя часть YAML также может использоваться в файлах Blade, поэтому Вы можете сделать то же самое, используя файл Blade с именем `404.blade.php`.
 
-This will create a file named `404.html` in your site's `build` directory.
+Это создаст файл с именем `404.html` в каталоге `build` Вашего сайта.
 
-### Using an Nginx Server
+### Использование сервера Nginx
 
-You can create your custom 404 file as `404.md` or `404.blade.php` in your `source` directory, and if your Jigsaw site is using [pretty URLs](/docs/pretty-urls), it will be output as `/404/index.html`:
+Вы можете создать свой собственный файл 404 как `404.md` или `404.blade.php` в Вашем каталоге `source`, и если Ваш сайт Jigsaw использует [красивые URL-адреса](/docs/pretty-urls), он будет выводится как `/404/index.html`:
 
 > _source/404.md_
 
@@ -39,22 +39,21 @@ extends: _layouts.master
 section: content
 ---
 
-### Sorry, that page does not exist.
+### Извините, данная страница не существует.
 ```
 
-When hosting your site on an Nginx server, you will need to configure the `error_page` setting in your server's `nginx.conf` file, or in the specific configuration file that Nginx is using for your site. These configuration files are typically found in `/etc/nginx/`, though their location varies by server. If your site is managed using Laravel Forge, for example, the configuration file for your site will be located at `/etc/nginx/sites-enabled/{name-of-your-site}`; it can also be edited via Forge's "Edit Nginx Configuration" option in the "Files" menu.
+При размещении Вашего сайта на сервере Nginx Вам необходимо настроить параметр `error_page` в файле `nginx.conf` Вашего сервера или в конкретном файле конфигурации, который Nginx использует для Вашего сайта. Эти файлы конфигурации обычно находятся в `/etc/nginx/`, хотя их расположение зависит от сервера. Если Ваш сайт управляется с помощью Laravel Forge, например, файл конфигурации для Вашего сайта будет расположен в `/etc/nginx/sites-enabled/{name-of-your-site}`; его также можно редактировать с помощью параметра Forge «Редактировать конфигурацию Nginx» в меню «Файлы».
 
-Once you've located your Nginx configuration file, add the following line to the `server` block:
+Найдя файл конфигурации Nginx, добавьте следующую строку в блок `server`:
 
 ```
 error_page 404 /404;
 ```
 
-In addition, if it is not already there, make sure the following line appears in the section of your configuration file that begins with `location ~ \.php$ {`:
+Кроме того, если его там еще нет, убедитесь, что следующая строка отображается в разделе Вашего файла конфигурации, который начинается с `location ~ \.php$ {`:
 
 ```
 fastcgi_intercept_errors on;
 ```
 
-After you restart your Nginx server, it will look for the error page `/404/index.html` in your `build` directory whenever someone navigates to a page that does not exist.
-
+После перезапуска сервера Nginx он будет искать страницу с ошибкой `/404/index.html` в Вашем каталоге `build` всякий раз, когда кто-то переходит на страницу, которая не существует.
