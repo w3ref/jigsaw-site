@@ -3,19 +3,14 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-## Page Metadata
+## Метаданные страницы
 
-For each page, Jigsaw provides you with certain metadata values through `get` functions accessed on the `$page` object:
+Для каждой страницы Jigsaw предоставляет Вам определенные значения метаданных с помощью функций `get`, доступ к которым осуществляется на объекте `$page`:
 
 
-`$page->getPath()` returns the path to the current page, relative to the site root
-
-`$page->getRelativePath()` returns the relative path (i.e. parent directories) of the current page, relative to the site root
-
-`$page->getUrl()` returns the full URL to the item, if `baseUrl` was defined in `config.php`
-
-`$page->getFilename()` returns the filename of the page, without extension (e.g. `my-first-page`)
-
-`$page->getExtension()` returns the file extension (e.g. `md`)
-
-`$page->getModifiedTime()` returns the last modified time of the file, as a Unix timestamp
+- `$page->getPath()` возвращает путь к текущей странице относительно корня сайта
+- `$page->getRelativePath()` возвращает относительный путь (то есть родительские каталоги) текущей страницы относительно корня сайта
+- `$page->getUrl()` возвращает полный URL-адрес элемента, если `baseUrl` был определен в `config.php`
+- `$page->getFilename()` возвращает имя файла страницы без расширения (например, `my-first-page`)
+- `$page->getExtension()` возвращает расширение файла (например, `md`)
+- `$page->getModifiedTime()` возвращает время последнего изменения файла в виде отметки времени Unix
