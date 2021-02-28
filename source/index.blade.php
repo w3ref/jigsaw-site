@@ -7,13 +7,13 @@
     <div class="container-content px-4 sm:px-6 py-4 sm:py-8">
         <div class="flex-col mb-0 sm:mb-8 pb-4">
             <h1 class="text-4xl md:text-5xl text-blue-darker leading-none">
-                Static sites for <br />
-                modern developers
+                Статические сайты для <br />
+                современных разработчиков
             </h1>
 
             <p class="max-w-md mt-4 text-grey-dark lead">
-                Jigsaw is a framework for rapidly building static sites using the <br class="hidden sm:block">
-                same modern tooling that powers your web applications.
+                Jigsaw - это платформа для быстрого создания статических сайтов с использованием тех же <br class="hidden sm:block">
+                современных инструментов, что и ваши веб-приложения.
             </p>
         </div>
     </div>

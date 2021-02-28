@@ -13,10 +13,10 @@ permalink: 404.html
 
         <div>
             <h1 class="text-6xl font-bold text-blue-darker leading-0 mb-12">404</h1>
-            <h1 class="text-5xl font-bold text-blue-darker mb-6">Page not found</h1>
-            <p class="text-grey-dark text-lg mb-6">The page you requested could not be found</p>
+            <h1 class="text-5xl font-bold text-blue-darker mb-6">Страница не найдена</h1>
+            <p class="text-grey-dark text-lg mb-6">Страница, которую вы ищете, не найдена</p>
 
-            <a href="/" title="Jigsaw by Tighten" class="bg-purple-dark py-2 px-6 text-sm rounded-lg uppercase text-white shadow">Go to home</a>
+            <a href="/" title="Jigsaw by Tighten" class="bg-purple-dark py-2 px-6 text-sm rounded-lg uppercase text-white shadow">Перейти на главную</a>
         </div>
     </div>
 </div>

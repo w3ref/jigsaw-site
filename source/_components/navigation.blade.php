@@ -8,15 +8,15 @@
         </div>
 
         <div class="tracking-wide flex items-center">
-            <a href="https://github.com/tighten/jigsaw" title="Contribute to Jigsaw on GitHub"
+            <a href="https://github.com/tighten/jigsaw" title="Внесите свой вклад в Jigsaw на GitHub"
                 class="mr-4 block text-sm text-blue-darker hover:text-purple-darker uppercase font-medium">
-                <span class="hidden md:inline-block hover:underline">Contribute</span>
+                <span class="hidden md:inline-block hover:underline">Способствовать</span>
 
                 <img src="/assets/img/GitHub.svg" alt="GitHub alien logo" class="md:hidden -mb-1">
             </a>
 
-            <a href="/docs/installation" title="Read the Jigsaw documentation"
-                class="block text-sm py-2 px-4 md:py-3 md:px-4 bg-purple hover:bg-purple-dark rounded text-white uppercase font-medium shadow-md">Docs</a>
+            <a href="/docs/installation" title="Прочтите документацию Jigsaw"
+                class="block text-sm py-2 px-4 md:py-3 md:px-4 bg-purple hover:bg-purple-dark rounded text-white uppercase font-medium shadow-md">Документация</a>
         </div>
     </nav>
 </header>

@@ -9,7 +9,7 @@
             <div class="editor-row">
                 <p class="line-number">2</p>
                 <div class="line-code">
-                    <span class="text-pink">title</span>: <span class="text-yellow">"Jigsaw is awesome!"</span>
+                    <span class="text-pink">title</span>: <span class="text-yellow">"Jigsaw это круто!"</span>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
             <div class="editor-row">
                 <p class="line-number">9</p>
                 <div class="line-code ml-4">
-                    <span class="text-pink">&lt;p&gt;</span>Contact us at <br class="hidden md:block lg:hidden"> @{{ $page->contact_email }}<span class="text-pink">&lt;/p&gt;</span>
+                    <span class="text-pink">&lt;p&gt;</span>Свяжитесь с нами по <br class="hidden md:block lg:hidden"> @{{ $page->contact_email }}<span class="text-pink">&lt;/p&gt;</span>
                 </div>
             </div>
 
@@ -57,10 +57,10 @@
         class="absolute hidden md:flex flex-col right-0 w-82 lg:w-112 h-70 lg:h-76 justify-center items-center select-none lg:-mt-12 mr-4"
         style="background:url('/assets/img/browser-illustration.svg') no-repeat center top; background-size: contain;"
     >
-        <h1 class="text-grey-darker text-2xl lg:text-4xl">Jigsaw is awesome!</h1>
+        <h1 class="text-grey-darker text-2xl lg:text-4xl">Jigsaw это круто!</h1>
 
         <p class="text-grey-darker text-base">
-            Contact us at
+            Свяжитесь с нами по
             <a href="mailto:hello@tighten.co?subject='Hello from Jigsaw'" class="text-blue-lighter">hello@tighten.co</a>
         </p>
     </div>

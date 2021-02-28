@@ -23,7 +23,7 @@
             </a>
 
             <p class="text-sm text-blue-dark mb-0 leading-tight">
-                A project by
+                Проект автора
                 <a href="https://tighten.co" title="Tighten | Product Development for Web + Mobile"
                     class="text-purple">Tighten</a>
             </p>
@@ -45,12 +45,12 @@
     </div>
 
     <footer class="py-8 flex flex-col sm:flex-row justify-center items-center text-center">
-        <p class="text-grey-dark font-normal text-xs sm:text-sm my-1">Brought to you by the lovely humans at
+        <p class="text-grey-dark font-normal text-xs sm:text-sm my-1">Принесено Вам прекрасными людьми из
             <a href="https://tighten.co" class="text-purple hover:text-purple-darker font-normal no-underline sm:pr-4" title="Tighten | Product Development for Web + Mobile | Laravel + Vue.js">Tighten</a>
         </p>
 
         <a href="https://github.com/tighten/jigsaw" class="sm:border-l border-purple-light sm:pl-4 text-purple text-xs sm:text-sm hover:text-purple-darker font-normal no-underline my-1"
-            title="Jigsaw on GitHub">Issues/Feature Requests</a>
+            title="Jigsaw on GitHub">Проблемы/Запросы функций</a>
     </footer>
 </div>
 @endsection

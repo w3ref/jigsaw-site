@@ -1,8 +1,8 @@
 <section class="flex flex-col items-center bg-brown-lightest text-center px-4 sm:px-6 py-16">
-    <h3 class="text-blue-darker text-center text-3xl mb-6">Compile your assets using Laravel Mix.</h3>
+    <h3 class="text-blue-darker text-center text-3xl mb-6">Скомпилируйте свои ресурсы с помощью Laravel Mix.</h3>
 
     <p class="max-w-md mx-auto text-center text-blue text-lg leading-normal mb-12">
-        Jigsaw bakes in support for Laravel Mix so you can compile your CSS and Javascript assets the same way you're used to in Laravel.
+        Jigsaw поддерживает Laravel Mix, поэтому Вы можете компилировать свои ресурсы CSS и Javascript так же, как Вы привыкли в Laravel.
     </p>
 
 
