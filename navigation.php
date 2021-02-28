@@ -1,30 +1,30 @@
 <?php
 
 return [
-    'Installation' => [
+    'Установка' => [
         'root' => '/docs/installation',
         'children' => [
-            'Using a Starter Template' => ['root' => '/docs/starter-templates'],
+            'Использование стартового шаблона' => ['root' => '/docs/starter-templates'],
         ],
     ],
-    'Building & Previewing' => [
+    'Сборка и Препросмотр' => [
         'root' => '/docs/building-and-previewing',
         'children' => [
-            'Environments' => ['root' => '/docs/building-and-previewing-environments'],
+            'Среды' => ['root' => '/docs/building-and-previewing-environments'],
         ],
     ],
-    'Compiling Assets' => ['root' => '/docs/compiling-assets'],
-    'Creating your Site\'s Content' => [
+    'Компиляция Ресурсов' => ['root' => '/docs/compiling-assets'],
+    'Создание контента Вашего сайта' => [
         'root' => '/docs/content',
         'children' => [
-            'Blade Templates & Partials' => ['root' => '/docs/content-blade'],
-            'Markdown' => ['root' => '/docs/content-markdown'],
-            'Other File Types' => ['root' => '/docs/content-other-file-types'],
+            'Шаблоны и части Blade' => ['root' => '/docs/content-blade'],
+            'Язык разметки' => ['root' => '/docs/content-markdown'],
+            'Другие типы файлов' => ['root' => '/docs/content-other-file-types'],
         ],
     ],
-    'Site Variables' => ['root' => '/docs/site-variables'],
-    'Helper Methods' => ['root' => '/docs/helper-methods'],
-    'Page Metadata' => ['root' => '/docs/page-metadata'],
+    'Переменные сайта' => ['root' => '/docs/site-variables'],
+    'Вспомогательные методы' => ['root' => '/docs/helper-methods'],
+    'Метаданные страницы' => ['root' => '/docs/page-metadata'],
     'Collections' => [
         'root' => '/docs/collections',
         'children' => [
@@ -38,8 +38,8 @@ return [
             'Remote Collections' => ['root' => '/docs/collections-remote-collections'],
         ],
     ],
-    'Pretty Urls' => ['root' => '/docs/pretty-urls'],
-    'Custom 404 Page' => ['root' => '/docs/custom-404-page'],
-    'Event Listeners' => ['root' => '/docs/event-listeners'],
-    'Deploying Your Site' => ['root' => '/docs/deploying-your-site'],
+    'Красивые URL-адреса' => ['root' => '/docs/pretty-urls'],
+    'Пользовательская страница 404' => ['root' => '/docs/custom-404-page'],
+    'Слушатели событий' => ['root' => '/docs/event-listeners'],
+    'Деплой сайта' => ['root' => '/docs/deploying-your-site'],
 ];
