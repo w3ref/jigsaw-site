@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jigsaw – Статические сайты для разработчиков на Laravel</title>
+
+        <link rel="icon" type="image/png" href="/assets/img/jigsaw-logo.png">
+
+        <meta name="msapplication-TileColor" content="#773580">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
+
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    </head>
+
+    <body class="min-h-screen font-sans leading-tight">
+        <main id="vue-app">
+            <div class="w-full bg-brown-lightest border-t-5 border-purple"></div>
+
+            <header class="w-full bg-white absolute z-10 shadow-md px-4 md:px-6">
+    <nav class="flex items-center max-w-3xl mx-auto py-4" aria-role="navigation">
+        <a class="flex flex-shrink-0 lg:flex-1 items-center mr-1" href="/" title="Jigsaw by Tighten">
+            <img src="/assets/img/jigsaw-logo.svg" alt="Jigsaw logo" class="w-10 lg:w-11 mr-3 shadow border-2 border-white rounded-lg" />
+
+            <h1 class="hidden mr-4 ml-4 uppercase tracking-wide text-blue-darker text-lg lg:text-2xl font-normal lg:ml-0 lg:inline-block">
+                Jigsaw
+            </h1>
+        </a>
+
+        <div class="w-full flex items-center lg:max-w-md xl:max-w-lg border-2 border-indigo-lighter rounded bg-grey">
+            <img src="/assets/img/icon-search.svg" class="absolute z-10 h-4 ml-2">
+
+            <input id="docsearch" type="text" class="w-full pl-8 pr-2 py-2 bg-grey" placeholder='Search documentation (Press "/" to focus)' />
+        </div>
+
+        <div class="hidden lg:flex lg:flex-1 items-center">
+            <a href="https://github.com/tighten/jigsaw" title="Contribute to Jigsaw on GitHub" class="flex mr-3 text-blue-darker pl-8">
+                <img src="/assets/img/GitHub.svg" alt="GitHub alien logo">
+            </a>
+
+            <p class="text-sm text-blue-dark mb-0 leading-tight">
+                Проект автора
+                <a href="https://tighten.co" title="Tighten | Product Development for Web + Mobile"
+                    class="text-purple">Tighten</a>
+            </p>
+        </div>
+
+        <navigation-toggle></navigation-toggle>
+    </nav>
+</header>
+
+<div class="bg-brown-lightest min-h-screen pt-16 md:pt-24 lg:pt-32 px-0 md:px-6">
+    <div class="flex flex-col lg:flex-row justify-center max-w-3xl mx-auto">
+        <navigation :links='{"\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430":{"root":"\/docs\/installation","children":{"\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0430\u0440\u0442\u043e\u0432\u043e\u0433\u043e \u0448\u0430\u0431\u043b\u043e\u043d\u0430":{"root":"\/docs\/starter-templates"}}},"\u0421\u0431\u043e\u0440\u043a\u0430 \u0438 \u041f\u0440\u0435\u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440":{"root":"\/docs\/building-and-previewing","children":{"\u0421\u0440\u0435\u0434\u044b":{"root":"\/docs\/building-and-previewing-environments"}}},"\u041a\u043e\u043c\u043f\u0438\u043b\u044f\u0446\u0438\u044f \u0420\u0435\u0441\u0443\u0440\u0441\u043e\u0432":{"root":"\/docs\/compiling-assets"},"\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0430 \u0412\u0430\u0448\u0435\u0433\u043e \u0441\u0430\u0439\u0442\u0430":{"root":"\/docs\/content","children":{"\u0428\u0430\u0431\u043b\u043e\u043d\u044b \u0438 \u0447\u0430\u0441\u0442\u0438 Blade":{"root":"\/docs\/content-blade"},"\u042f\u0437\u044b\u043a \u0440\u0430\u0437\u043c\u0435\u0442\u043a\u0438":{"root":"\/docs\/content-markdown"},"\u0414\u0440\u0443\u0433\u0438\u0435 \u0442\u0438\u043f\u044b \u0444\u0430\u0439\u043b\u043e\u0432":{"root":"\/docs\/content-other-file-types"}}},"\u041f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435 \u0441\u0430\u0439\u0442\u0430":{"root":"\/docs\/site-variables"},"\u0412\u0441\u043f\u043e\u043c\u043e\u0433\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u043c\u0435\u0442\u043e\u0434\u044b":{"root":"\/docs\/helper-methods"},"\u041c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b":{"root":"\/docs\/page-metadata"},"\u041a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u0438":{"root":"\/docs\/collections","children":{"\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u0438\u0435 \u0440\u043e\u0434\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0445 \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432":{"root":"\/docs\/collections-extending-parent-templates"},"\u041f\u0443\u0442\u0438":{"root":"\/docs\/collections-paths"},"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430":{"root":"\/docs\/collections-sorting"},"\u0424\u0438\u043b\u044c\u0442\u0440\u0430\u0446\u0438\u044f":{"root":"\/docs\/collections-filtering"},"\u041a\u0430\u0440\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044f":{"root":"\/docs\/collections-mapping"},"\u041f\u0430\u0433\u0438\u043d\u0430\u0446\u0438\u044f":{"root":"\/docs\/collections-pagination"},"\u041f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435 \u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u0438":{"root":"\/docs\/collections-variables-and-functions"},"\u0423\u0434\u0430\u043b\u0435\u043d\u043d\u044b\u0435 \u043a\u043e\u043b\u043b\u0435\u043a\u0446\u0438\u0438":{"root":"\/docs\/collections-remote-collections"}}},"\u041a\u0440\u0430\u0441\u0438\u0432\u044b\u0435 URL-\u0430\u0434\u0440\u0435\u0441\u0430":{"root":"\/docs\/pretty-urls"},"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 404":{"root":"\/docs\/custom-404-page"},"\u0421\u043b\u0443\u0448\u0430\u0442\u0435\u043b\u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u0439":{"root":"\/docs\/event-listeners"},"\u0414\u0435\u043f\u043b\u043e\u0439 \u0441\u0430\u0439\u0442\u0430":{"root":"\/docs\/deploying-your-site"}}'></navigation>
+
+        <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
+            <h2>Использование стартового шаблона</h2>
+<p>Чтобы быстро подготовить Вас к работе с полностью настроенным сайтом, Jigsaw включает в себя два «начальных шаблона» - один для блога, другой для документации с открытым исходным кодом - которые готовы для Вас, чтобы Вы могли настроить свой контент. Чтобы использовать эти шаблоны в качестве отправной точки, просто добавьте имя шаблона в команду <code>init</code>:</p>
+<pre><code class="language-bash">./vendor/bin/jigsaw init blog</code></pre>
+<p>или</p>
+<pre><code class="language-bash">./vendor/bin/jigsaw init docs</code></pre>
+<p>Стартовые шаблоны <code>blog</code> и <code>docs</code> включают образцы общих типов страниц и предварительно настроены:</p>
+<ul>
+<li>Полностью отзывчивая панель навигации</li>
+<li><a href="https://tailwindcss.com/">Tailwind CSS</a>, служебный CSS-фреймворк, который позволяет настраивать дизайн, не касаясь ни строчки CSS</li>
+<li><a href="https://www.purgecss.com/">Purgecss</a> для удаления неиспользуемых селекторов из CSS, что приводит к уменьшению размера файлов CSS</li>
+<li>Подсветка синтаксиса с помощью <a href="https://highlightjs.org/">highlight.js</a></li>
+<li>Скрипт, который автоматически генерирует файл <code>sitemap.xml</code></li>
+<li>Пользовательская страница 404</li>
+</ul>
+<p>Шаблон <code>blog</code> также включает:</p>
+<ul>
+<li>Компонент для подписки на новостную рассылку <a href="https://mailchimp.com/">Mailchimp</a></li>
+<li>Образец контактной формы</li>
+<li>Панель поиска на основе <a href="http://fusejs.io/">Fuse.js</a> и <a href="https://vuejs.org/">Vue.js</a>, которая автоматически индексирует Ваш контент и не требует настройки.</li>
+</ul>
+<p>...в то время как шаблон <code>docs</code> включает:</p>
+<ul>
+<li>Боковое меню навигации</li>
+<li>Панель поиска на основе <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a>, и инструкции о том, как начать работу с их бесплатной службой индексирования</li>
+</ul>
+<hr />
+<p><a class="block pt-6" href="http://jigsaw-blog-staging.tighten.co/" target="_blank">
+<img src="/assets/img/template-blog.png" alt="Скриншот стартового шаблона блога Jigsaw" class="border shadow rounded" />
+</a></p>
+<p><a href="http://jigsaw-blog-staging.tighten.co/" target="_blank">Предварительный просмотр шаблона блога</a></p>
+<hr />
+<p><a class="block pt-6" href="http://jigsaw-docs-staging.tighten.co/" target="_blank">
+<img src="/assets/img/template-docs.png" alt="Скриншот стартового шаблона Jigsaw docs" class="border shadow rounded" />
+</a></p>
+<p><a href="http://jigsaw-docs-staging.tighten.co/" target="_blank">Предварительный просмотр шаблона документации</a></p>
+<hr />
+<h3>Установка стороннего начального шаблона</h3>
+<p>Вы также можете установить стартовый шаблон, созданный третьей стороной. Сторонние шаблоны, зарегистрированные как пакеты Composer на <a href="https://packagist.org/">Packagist</a>, можно установить, указав поставщика и имя пакета при запуске команды <code>init</code>:</p>
+<pre><code class="language-bash">./vendor/bin/jigsaw init tightenco/jigsaw-netlify-template</code></pre>
+<hr />
+<h3>Создание собственного начального шаблона</h3>
+<p>Чтобы создать свой собственный стартовый шаблон и поделиться им с сообществом Jigsaw, просто настройте свой стартовый сайт Jigsaw в общедоступном репозитории git, затем зарегистрируйте его как пакет Composer на <a href="https://packagist.org/">Packagist</a>. Пользователи смогут установить Ваш начальный шаблон, указав имя <code>vendor/package</code> в команде <code>init</code>.</p>
+<p>Когда пользователь устанавливает Ваш шаблон с помощью команды <code>init</code>, Jigsaw по умолчанию выполнит следующие шаги:</p>
+<ul>
+<li>скачать файлы шаблонов с помощью Composer</li>
+<li>установить базовые файлы Jigsaw</li>
+<li>скопируйте все файлы из Вашего шаблона в новый проект Jigsaw, перезаписав все соответствующие базовые файлы</li>
+<li>запустите <code>composer install</code>, <code>npm install</code> и <code>npm run dev</code></li>
+</ul>
+<p>Однако Вы можете настроить процесс <code>init</code>, чтобы получить полный контроль над установкой шаблона, добавив файл <code>init.php</code> в корень начального шаблона. Есть два способа настроить этот файл <code>init.php</code>:</p>
+<h4 class="pt-4">1. Вернуть массив настроек <code>init</code></h4>
+<p>Файл <code>init.php</code> может возвращать массив со следующими ключами (все необязательно):</p>
+<ul>
+<li><code>delete</code>: файл или массив файлов, которые следует удалить из базовой установки</li>
+<li><code>ignore</code>: файл или массив файлов, которые следует игнорировать из начального шаблона при установке</li>
+<li><code>commands</code>: команда оболочки или массив команд, которые должны выполняться после того, как файлы шаблона были скопированы в проект</li>
+</ul>
+<p>Например:</p>
+<blockquote>
+<p><em>init.php</em></p>
+</blockquote>
+<pre><code class="language-php">&lt;?php
+
+return [
+    'delete' =&gt; [
+        'bootstrap.php',
+    ],
+    'ignore' =&gt; [
+        'readme.md',
+    ],
+    'commands' =&gt; [
+        'composer install',
+        'npm install',
+        'npm run watch',
+    ],
+];</code></pre>
+<ul>
+<li>И <code>delete</code> и <code>ignore</code> поддерживают <code>*</code> в качестве символа подстановки.</li>
+<li>Каталоги <code>vendor</code>, <code>node_modules</code> и <code>build_*</code> никогда не копируются из начального шаблона, если они есть.</li>
+<li>Если в этом массиве не указан ключ <code>commands</code>, будут выполняться команды по умолчанию. Если указана одна или несколько <code>commands</code>, будут выполняться только указанные Вами <code>commands</code> (а не значения по умолчанию). Если <code>commands</code> - пустой массив, никакие команды оболочки (включая значения по умолчанию) запускаться не будут.</li>
+</ul>
+<h4 class="pt-4">2. Вызов методов для переменной <code>$init</code></h4>
+<p>Для более детального управления, вместо того, чтобы возвращать массив настроек в <code>init.php</code>, Вы можете напрямую обращаться к установщику с помощью переменной <code>$init</code> и строить процесс установки, используя свободный API. Доступные методы включают:</p>
+<ul>
+<li><code>setup()</code>: Устанавливает базовые файлы сайта Jigsaw</li>
+<li><code>delete()</code>: Удаляет один или несколько файлов из каталога проекта</li>
+<li><code>ignore()</code>: Игнорирует один или несколько файлов при копировании из начального шаблона</li>
+<li><code>from()</code>: Указывает подкаталог пакета для копирования файлов из</li>
+<li><code>copy()</code>: Копирует один или несколько (или все, если не указан параметр) файлов из начального шаблона в проект</li>
+<li><code>run()</code>: Запускает одну или несколько команд оболочки</li>
+<li><code>confirm()</code>: Задает пользователю вопрос типа да или нет</li>
+<li><code>ask()</code>: Задает пользователю открытый вопрос или вопрос с несколькими вариантами ответа</li>
+<li><code>output()</code>, <code>info()</code>, <code>error()</code>, <code>comment()</code>: Выводит в консоль</li>
+</ul>
+<blockquote>
+<p><em><code>delete()</code>, <code>ignore()</code> и <code>copy()</code> поддерживают <code>*</code> как подстановочный знак.</em></p>
+</blockquote>
+<div class="pb-4"></div>
+<p>Используя эти команды, Вы можете создавать более сложные установщики шаблонов. Например:</p>
+<blockquote>
+<p><em>init.php</em></p>
+</blockquote>
+<pre><code class="language-php">&lt;?php
+
+$init-&gt;setup()
+    -&gt;delete('webpack.mix.js')
+    -&gt;copy('base');
+
+$theme = $init-&gt;ask(
+    'Какую тему Вы хотите использовать?',
+    ['l' =&gt; 'light', 'd' =&gt; 'dark'],
+    $default = 'l'
+);
+
+switch ($theme) {
+    case 'd':
+        $init-&gt;from('themes/dark')-&gt;copy();
+        break;
+
+    default:
+        $init-&gt;from('themes/light')-&gt;copy();
+        break;
+}
+
+$init-&gt;output('Завершение установки...')
+    -&gt;run([
+        'composer install',
+        'npm install',
+        './node_modules/.bin/tailwind init tailwind.js',
+    ]);</code></pre>
+<hr />
+<div class="pt-2"></div>
+<blockquote>
+<p>Если Вы создали стартовый шаблон, которым хотите поделиться, сообщите нам об этом в Twitter по адресу <a href="https://twitter.com/tightenco">@tightenco</a> или откройте предложение в <a href="https://github.com/tighten/jigsaw-site/issues">репозитории документации Jigsaw</a>. Очень скоро мы добавим витрину хорошо продуманных шаблонов, созданных сообществом, и мы будем рады представить Ваш!</p>
+</blockquote>
+<hr />
+<h3>Обработка существующих данных сайта</h3>
+<p>При запуске <code>jigsaw init</code> команда проверит, запускали ли Вы уже <code>init</code> ранее и начали ли создавать свой сайт Jigsaw. Если это так, Вам будет предложено либо заархивировать существующий сайт перед инициализацией нового (что переместит все существующие файлы в каталог <code>archived</code>), либо удалить существующий сайт и начать все заново:</p>
+<p><img src="/assets/img/init-options.png" alt="Параметры оболочки при запуске команды инициализации Jigsaw" /></p>        </div>
+
+        <navigation-on-page :headings="pageHeadings"></navigation-on-page>
+    </div>
+
+    <footer class="py-8 flex flex-col sm:flex-row justify-center items-center text-center">
+        <p class="text-grey-dark font-normal text-xs sm:text-sm my-1">Принесено Вам прекрасными людьми из
+            <a href="https://tighten.co" class="text-purple hover:text-purple-darker font-normal no-underline sm:pr-4" title="Tighten | Product Development for Web + Mobile | Laravel + Vue.js">Tighten</a>
+        </p>
+
+        <a href="https://github.com/tighten/jigsaw" class="sm:border-l border-purple-light sm:pl-4 text-purple text-xs sm:text-sm hover:text-purple-darker font-normal no-underline my-1"
+            title="Jigsaw on GitHub">Проблемы/Запросы функций</a>
+    </footer>
+</div>
+        </main>
+            <script src="/assets/build/js/app.js?id=7f7ad5606ff37869627a"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript">
+        docsearch({
+            apiKey: '57a7f5b1e4e0a44c7e2f8e96abcbf674',
+            indexName: 'jigsaw',
+            inputSelector: '#docsearch'
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode == 191) {
+                document.getElementById('docsearch').focus();
+                e.preventDefault()
+            }
+            if (e.keyCode == 27) {
+                document.getElementById('docsearch').blur();
+                e.preventDefault()
+            }
+        });
+    </script>
+    </body>
+</html>
