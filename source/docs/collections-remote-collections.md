@@ -6,13 +6,13 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Удаленные коллекции
 
-In addition to using Markdown or Blade files for your collection items, you can return collection items directly from the `collections` array in `config.php`. This allows you to generate items programmatically—for example, you can [fetch items from a remote source](#remoteItems) such as an external API or API-based content management systems like Contentful, GraphCMS, or DatoCMS.
+Помимо использования файлов Markdown или Blade для элементов Вашей коллекции, Вы можете возвращать элементы коллекции непосредственно из массива `collections` в `config.php`. Это позволяет Вам создавать элементы программно - например, Вы можете [получать элементы из удаленного источника](#remoteItems), например, внешнего API или систем управления контентом на основе API, таких как Contentful, GraphCMS или DatoCMS.
 
 ---
 
-### Building collection items in config.php
+### Сборка элементов коллекции в config.php
 
-For any collection, items can be built by returning an array or collection of `items` from the collection's configuration array in `config.php`. Each item should be an array; the keys of the item will be converted to page variables (such as those that would typically appear in the YAML header of a Markdown file), while the value of the `content` key will serve as the content of the collection item. This content will be parsed as Markdown, and thus can contain either Markdown or HTML content; it will be available within your Blade templates with `@yield('content')` or by echoing `{!! $page->getContent() !!}`:
+Для любой коллекции элементы могут быть созданы путем возврата массива или коллекции элементов `items` из массива конфигурации коллекции в `config.php`. Каждый элемент должен быть массивом; ключи элемента будут преобразованы в переменные страницы (например, те, которые обычно появляются в заголовке YAML файла Markdown), в то время как значение ключа `content` будет служить содержимым элемента коллекции. Этот контент будет проанализирован как Markdown и, следовательно, может содержать контент Markdown или HTML; он будет доступен в Ваших шаблонах Blade с помощью `@yield('content')` или повторением `{!! $page->getContent() !!}`:
 
 >_config.php_
 
@@ -23,12 +23,12 @@ return [
             'extends' => '_layouts.post',
             'items' => [
                 [
-                    'title' => 'Title of my first post',
-                    'content' => '## The first post content',
+                    'title' => 'Заголовок моего первого поста',
+                    'content' => '## Содержание первого поста',
                 ],
                 [
-                    'title' => 'Title of my second post',
-                    'content' => '## The second post content',
+                    'title' => 'Заголовок моего второго поста',
+                    'content' => '## Содержание второго поста',
                 ],
             ],
         ],
@@ -48,15 +48,15 @@ return [
 @endsection
 ```
 
-Under the hood, Jigsaw will:
+Под капотом Jigsaw:
 
-1. Create a `_tmp` directory in the collection's directory (e.g. `source/_posts/_tmp`) to store temporary Markdown files for each remote collection item
-2. Process the temporary files as though they were `*.blade.md` files
-3. Remove the temporary files when `jigsaw build` is complete
+1. Создайте каталог `_tmp` в каталоге коллекции (например, `source/_posts/_tmp`) для хранения временных файлов Markdown для каждого удаленного элемента коллекции
+2. Обработайте временные файлы, как если бы они были файлами `*.blade.md`
+3. Удалите временные файлы после завершения сборки `jigsaw build`
 
-In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post-1.blade.md`, `post-2.blade.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
+В дополнение к `content`, каждый элемент может указывать ключ `filename`, который будет использоваться как имя временного файла Markdown. Если опущено, в качестве имени файла по умолчанию будет использоваться имя коллекции, за которым следует индекс, таким образом, `post-1.blade.md`, `post-2.blade.md`, и т.д. Результирующий `path` выходного файла будут обрабатываться в соответствии с обычными правилами для коллекций.
 
-Alternatively, the `items` array can contain simple string values, which will be treated as the item's Markdown content, with no page variables:
+В качестве альтернативы, массив `items` может содержать простые строковые значения, которые будут обрабатываться как содержимое Markdown элемента без переменных страницы:
 
 >_config.php_
 
@@ -66,9 +66,9 @@ return [
         'posts' => [
             'extends' => '_layouts.post',
             'items' => [
-                '## The content for post 1',
-                '## The content for post 2',
-                '## The content for post 3',
+                '## Контент для поста 1',
+                '## Контент для поста 2',
+                '## Контент для поста 3',
             ],
         ],
     ],
@@ -78,9 +78,9 @@ return [
 ---
 
 <a name="remoteItems"></a>
-### Fetching collection items from a remote API
+### Получение элементов коллекции из удаленного API
 
-The `items` key in `config.php` can also reference a closure that returns an array or collection of items. By using a closure, collection items can be fetched from anywhere—from a remote API, from other places on the filesystem, or built up programmatically. The resulting data can then be transformed before collection items are built. For example:
+Ключ `items` в `config.php` также может ссылаться на замыкание, которое возвращает массив или коллекцию элементов. Используя замыкание, элементы коллекции могут быть получены из любого места - из удаленного API, из других мест файловой системы или созданы программно. Полученные данные затем можно преобразовать до создания элементов коллекции. Например:
 
 >_config.php_
 
@@ -104,8 +104,8 @@ return [
 ];
 ```
 
-If you want the remote API to only be called when building for particular environments, you can place the `items` closure in the appropriate `config.{environment}.php` file. For example, to only access your remote API when running `build production`, create a `config.production.php` file and include your `items` closure there. This will prevent potentially long build times while running `build local` in development.
+Если Вы хотите, чтобы удаленный API вызывался только при сборке для определенных сред, Вы можете поместить замыкание `items` в соответствующий файл `config.{environment}.php`. Например, чтобы получить доступ к Вашему удаленному API только при запуске `build production`, создайте файл `config.production.php` и включите туда Ваше замыкание `items`. Это предотвратит потенциально долгое время сборки при запуске `build local` в разработке.
 
-The `items` closure receives the `config` array as a parameter, so you may also reference other config values (for example, an API URL) inside the closure.
+Замыкание `items` получает в качестве параметра массив `config` поэтому Вы также можете ссылаться на другие значения конфигурации (например, URL-адрес API) внутри замыкания.
 
 

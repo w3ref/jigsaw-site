@@ -6,11 +6,11 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Переменные и вспомогательные функции
 
-Each collection can have its own set of variables and helper methods defined in the collection array in `config.php`. These follow the same format as the site-wide [variables](/docs/site-variables) and [helper methods](/docs/helper-methods) that are defined at the top level of the `config.php` array.
+Каждая коллекция может иметь свой собственный набор переменных и вспомогательных методов, определенных в массиве коллекции в `config.php`. Они имеют тот же формат, что и [переменные](/docs/site-variables) и [вспомогательные методы](/docs/helper-methods) для всего сайта, которые определены на верхнем уровне массива `config.php`.
 
-### Variables
+### Переменные
 
-Just as with site-wide variables, collection variables defined in `config.php` can act as defaults, which can be overridden by variables of the same name specified in the YAML front matter of a collection item. In fact, top-level variables in `config.php` will be overridden by variables of the same name in a collection's array, which will be further overridden by references in the YAML header of any individual page, allowing you to set up a cascade of variable defaults. For example:
+Как и в случае с общесайтовыми переменными, переменные коллекции, определенные в `config.php`, могут действовать как значения по умолчанию, которые могут быть переопределены переменными с тем же именем, указанными в начальной части YAML элемента коллекции. Фактически, переменные верхнего уровня в `config.php` будут переопределены одноименными переменными в массиве коллекции, которые в дальнейшем будут переопределены ссылками в заголовке YAML любой отдельной страницы, что позволит Вам настроить каскад значений переменных по умолчанию. Например:
 
 > _config.php_
 
@@ -18,10 +18,10 @@ Just as with site-wide variables, collection variables defined in `config.php` c
 <?php
 
 return [
-    'author' => 'Default Site Author',
+    'author' => 'Автор сайта по умолчанию',
     'collections' => [
         'posts' => [
-            'author' => 'Default Blog Author',
+            'author' => 'Автор блога по умолчанию',
         ],
     ],
 ];
@@ -32,8 +32,8 @@ return [
 ```
 ---
 extends: _layouts.post
-title: My First Post
-author: Keith Damiani
+title: Мой первый пост
+author: Кейт Дамиани
 ---
 @section ('content')
 
@@ -43,7 +43,7 @@ author: Keith Damiani
 @endsection
 ```
 
-For this collection item, author will be *Keith Damiani*, the value from the YAML header.
+Автором этого элемента коллекции будет *Кейт Дамиани*, значение из заголовка YAML.
 
 ---
 
@@ -52,7 +52,7 @@ For this collection item, author will be *Keith Damiani*, the value from the YAM
 ```
 ---
 extends: _layouts.post
-title: My Second Post
+title: Мой второй пост
 ---
 @section ('content')
 
@@ -62,7 +62,7 @@ title: My Second Post
 @endsection
 ```
 
-For this collection item, author will be *Default Blog Author*, the value from the `posts` array in `config.php`.
+Для этого элемента коллекции автором будет *Автор блога по умолчанию*, значение из массива `posts` в `config.php`.
 
 ---
 
@@ -71,7 +71,7 @@ For this collection item, author will be *Default Blog Author*, the value from t
 ```
 ---
 extends: _layouts.about
-title: About our company
+title: О нашей компании
 ---
 @section ('content')
 
@@ -81,12 +81,12 @@ title: About our company
 @endsection
 ```
 
-For this regular (non-collection) page, author will be *Default Site Author*, the value from the top level of `config.php.`
+Для этой обычной страницы (не являющейся коллекцией) автором будет *Автор сайта по умолчанию*, значение из верхнего уровня `config.php.`
 
 
-### Helper Functions
+### Вспомогательные функции
 
-Helper functions can be included in the collection settings array in `config.php`, and will be available to all of that collection's items. The same cascading rules that apply to variables also apply to functions, i.e. functions defined for a collection will override a function of the same name defined at the top level. For example:
+Вспомогательные функции могут быть включены в массив настроек коллекции в `config.php` и будут доступны для всех элементов этой коллекции. Те же правила каскадирования, которые применяются к переменным, также применимы к функциям, то есть функции, определенные для коллекции, переопределят функцию с тем же именем, определенную на верхнем уровне. Например:
 
 > _config.php_
 

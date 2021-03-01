@@ -6,7 +6,7 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Пагинация
 
-You can create a Blade template that displays your collection items in a paginated format by including a `pagination` key in the template's YAML front matter. The pagination header should include the `collection` name and the `perPage` count:
+Вы можете создать шаблон Blade, который отображает элементы Вашей коллекции в формате с разбивкой на страницы, включив ключ `pagination` в обложку YAML шаблона. Заголовок разбивки на страницы должен включать имя коллекции `collection` и счетчик `perPage`:
 
 
 > _posts.blade.php_
@@ -21,25 +21,23 @@ pagination:
 ...
 ```
 
-> If you don't provide a `perPage` value, the default value will be 10. The default value can also be set globally by adding a `perPage` key to `config.php`.
+> Если Вы не укажете значение `perPage`, значением по умолчанию будет 10. Значение по умолчанию также можно установить глобально, добавив ключ `perPage` в `config.php`.
 
-Once the `pagination` has been defined in the header, the template will have access to a special `$pagination` variable, which has several attributes:
+Как только в заголовке будет определена `pagination`, шаблон получит доступ к специальной переменной `$pagination`, которая имеет несколько атрибутов:
 
-- `$pagination->items` contains an array of collection items for the current page
-- `$pagination->currentPage` contains the page number of the current page
-- `$pagination->totalPages` contains the total number of pages
-- `$pagination->pages` contains an array of paths to each page
-> Note that the `pages` are indexed by their page number, i.e. they are 1-based. So you can refer to the paths of a page by the page number, i.e. `$pagination->page[1]` will return the path to the first page.
+- `$pagination->items` содержит массив элементов коллекции для текущей страницы
+- `$pagination->currentPage` содержит номер текущей страницы
+- `$pagination->totalPages` содержит общее количество страниц
+- `$pagination->pages` содержит массив путей к каждой странице
 
-- `$pagination->first` contains the path to the first page (the same as `$pagination->path[1]`)
-- `$pagination->last` contains the path to the last page
-- `$pagination->next` contains the path to the next page
-- `$pagination->previous` contains the path to the previous page
+> Обратите внимание, что страницы `pages` индексируются по их номерам, т.е. они начинаются с 1. Таким образом, Вы можете ссылаться на пути страницы по номеру страницы, т.е. `$pagination->page[1]` вернет путь к первой странице.
 
+- `$pagination->first` содержит путь к первой странице (аналогично `$pagination->path[1]`)
+- `$pagination->last` содержит путь к последней странице
+- `$pagination->next` содержит путь к следующей странице
+- `$pagination->previous` содержит путь к предыдущей странице
 
-
-
-Using these `$pagination` attributes, you can build a set of pagination buttons and links:
+Используя эти атрибуты `$pagination`, Вы можете создать набор кнопок и ссылок нумерации страниц:
 
 ```
 @if ($previous = $pagination->previous)
@@ -64,9 +62,7 @@ Using these `$pagination` attributes, you can build a set of pagination buttons 
 @endif
 ```
 
-
-
-To display the items on each page, iterate over the `$pagination->items` collection:
+Чтобы отобразить элементы на каждой странице, выполните итерацию по коллекции `$pagination->items`:
 
 ```
 @foreach ($pagination->items as $post)

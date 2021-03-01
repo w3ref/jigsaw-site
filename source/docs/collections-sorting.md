@@ -6,12 +6,12 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Сортировка
 
-You can control the order in which your collection items are sorted. When iterating over your collection in a `@foreach` loop, the items will be returned in the order you specify.
+Вы можете контролировать порядок сортировки предметов Вашей коллекции. При итерации Вашей коллекции в цикле `@foreach` элементы будут возвращены в указанном вами порядке..
 
 
-### Default Sort
+### Сортировка по умолчанию
 
-By default, collection items will be sorted by their filenames in ascending order. This can be a handy way to order items by date, for instance, by prepending the date to each filename:
+По умолчанию элементы коллекции будут отсортированы по именам файлов в возрастающем порядке. Это может быть удобный способ упорядочить элементы по дате, например, добавив дату к каждому имени файла:
 
 ```
 2017-01-01-my-first-post.md
@@ -20,9 +20,9 @@ By default, collection items will be sorted by their filenames in ascending orde
 ...
 ```
 
-### Sorting by a Variable
+### Сортировка по переменной
 
-You can also sort your collection by the values of variables defined in the YAML front matter of each collection item. Add a `sort` key to the collection's array in `config.php`, and specify the name of the field to sort by:
+Вы также можете отсортировать свою коллекцию по значениям переменных, определенных в передней части YAML для каждого элемента коллекции. Добавьте ключ `sort` к массиву коллекции в `config.php` и укажите имя поля для сортировки:
 
 > _config.php_
 
@@ -38,7 +38,7 @@ return [
 ];
 ```
 
-To sort by multiple variables (for a hierarchical sort), specify an array of variables:
+Чтобы отсортировать по нескольким переменным (для иерархической сортировки), укажите массив переменных:
 
 > _config.php_
 
@@ -54,7 +54,7 @@ return [
 ];
 ```
 
-To sort in descending order, prepend a `-` to the variable name:
+Чтобы отсортировать по убыванию, добавьте к имени переменной знак `-`:
 
 > _config.php_
 

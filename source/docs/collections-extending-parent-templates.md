@@ -6,51 +6,51 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Расширение родительских шаблонов
 
-To display each of your collection items on their own page, you need to specify a parent template. You can do this in the `extends` key of the YAML front matter, or with the `@extends` directive in a Blade file:
+Чтобы отображать каждый из элементов Вашей коллекции на отдельной странице, Вам необходимо указать родительский шаблон. Вы можете сделать это с помощью ключа `extends` в разделе YAML или с помощью директивы `@extends` в файле Blade:
 
 > _my-first-post.md_
 
 ```
 ---
 extends: _layouts.post
-title: My First Blog Post
+title: Моя первая запись в блоге
 author: Keith Damiani
 date: 2017-03-23
 section: content
 ---
 
-This post is *profoundly* interesting.
+Этот пост *глубоко* интересен.
 ```
 
 > _my-second-post.blade.php_
 
 ```
 ---
-title: My Second Blog Post
+title: Моя вторая запись в блоге
 author: Keith Damiani
 date: 2017-03-25
 section: content
 ---
 @extends ('_layouts.post')
 
-This is {{ $page->author }}'s second <strong>amazing</strong> post.
+Это второй <strong>потрясающий</strong> пост от {{ $page->author }}.
 ```
 
-### Collection items with no parent template
+### Элементы коллекции без родительского шаблона
 
-However, parent templates are optional for collection items. In some cases—such as for a collection of staff bios that appear on an "About Us" page—you may not need to display each of your collection items on their own pages. To do this, simply omit the `extends` key from the YAML front matter, or the `@extends` directive from a Blade file.
+Однако родительские шаблоны для элементов коллекции необязательны. В некоторых случаях - например, для коллекции биографий сотрудников, которые появляются на странице «О нас», Вам может не понадобиться отображать каждый из элементов Вашей коллекции на отдельных страницах. Для этого просто опустите ключ `extends` из основного материала YAML или директиву `@extends` из файла Blade.
 
 
-### Collection items with multiple parent templates
+### Элементы коллекции с несколькими родительскими шаблонами
 
-Collection items can also extend _multiple_ parent templates, by specifying the templates as an array in the `extends` key in the YAML front matter. This will generate a separate URL for each template—allowing, for example, a collection item to have both `/web/item` and `/api/item` endpoints, or `/summary` and `/detail` views.
+Элементы коллекции также могут расширять _множественные_ родительские шаблоны, определяя шаблоны как массив в ключе `extends` во вступительной части YAML. Это будет генерировать отдельный URL для каждого шаблона, что позволяет, например, элементу коллекции иметь как конечные точки `/web/item` и `/api/item`, так и представления `/summary` и `/detail`.
 
 > __people/abraham-lincoln.md_
 
 ```
 ---
-name: Abraham Lincoln
-role: President
+name: Абрахам Линкольн
+role: Президент
 number: 16
 extends:
   web: _layouts.person
@@ -82,7 +82,7 @@ section: content
 ```
 
 
-If using multiple parent templates, you can specify separate paths in `config.php` for each resulting page:
+При использовании нескольких родительских шаблонов Вы можете указать отдельные пути в `config.php` для каждой полученной страницы:
 
 > _config.php_
 

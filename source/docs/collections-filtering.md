@@ -6,9 +6,9 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Фильтрация
 
-You can filter collection items by adding a `filter` key to the collection's array in `config.php`, and specifying a callable that accepts the collection item and returns a boolean. Items that return `false` from the filter will not be built.
+Вы можете фильтровать элементы коллекции, добавив ключ `filter` в массив коллекции в `config.php` и указав вызываемый объект, который принимает элемент коллекции и возвращает логическое значение. Элементы, которые возвращают `false` из фильтра, не будут построены.
 
-A common use for filtering is to mark some blog posts as `published`, using a variable in the YAML front matter of each collection item that specifies a boolean or a date. Using a filter in `config.production.php`, draft posts can be made visible in the local or staging [environments](/docs/building-and-previewing-environments), but omitted from your production build.
+Обычно фильтрация используется для того, чтобы пометить некоторые сообщения в блоге как `published`, используя переменную в начальной части YAML каждого элемента коллекции, которая указывает логическое значение или дату. Используя фильтр в `config.production.php`, черновики сообщений можно сделать видимыми в локальной или промежуточной [средах](/docs/building-and-previewing-environments), но исключить их из производственной сборки.
 
 > _config.php_
 

@@ -6,7 +6,7 @@ section: documentation_content
 #### [Коллекции](/docs/collections)
 ## Картография
 
-You can map over your collection items by adding a `map` key to the collection's array in `config.php`, and specifying a callback that accepts the collection item. Each item is an instance of the `TightenCo\Jigsaw\Collection\CollectionItem` class, from which you can instantiate your own custom class using the static `fromItem()` method. Your custom class can include helper methods that might be too complex for storing in your `config.php` array.
+Вы можете сопоставить элементы своей коллекции, добавив ключ `map` в массив коллекции в `config.php` и указав обратный вызов, который принимает элемент коллекции. Каждый элемент является экземпляром класса `TightenCo\Jigsaw\Collection\CollectionItem`, из которого Вы можете создать экземпляр своего собственного пользовательского класса, используя статический метод `fromItem()`. Ваш собственный класс может включать вспомогательные методы, которые могут быть слишком сложными для хранения в Вашем массиве `config.php`.
 
 > _config.php_
 
@@ -24,7 +24,7 @@ return [
 ];
 ```
 
-Your custom `Post` class should extend `TightenCo\Jigsaw\Collection\CollectionItem`, and could include helper functions, reference and/or modify page variables, etc.:
+Ваш собственный класс `Post` должен расширять `TightenCo\Jigsaw\Collection\CollectionItem` и может включать вспомогательные функции, ссылаться и/или изменять переменные страницы и т.д.:
 
 ```
 <?php
