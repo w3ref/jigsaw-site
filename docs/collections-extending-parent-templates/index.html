@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,41 +63,41 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Расширение родительских шаблонов</h2>
-<p>To display each of your collection items on their own page, you need to specify a parent template. You can do this in the <code>extends</code> key of the YAML front matter, or with the <code>@extends</code> directive in a Blade file:</p>
+<p>Чтобы отображать каждый из элементов Вашей коллекции на отдельной странице, Вам необходимо указать родительский шаблон. Вы можете сделать это с помощью ключа <code>extends</code> в разделе YAML или с помощью директивы <code>@extends</code> в файле Blade:</p>
 <blockquote>
 <p><em>my-first-post.md</em></p>
 </blockquote>
 <pre><code>---
 extends: _layouts.post
-title: My First Blog Post
+title: Моя первая запись в блоге
 author: Keith Damiani
 date: 2017-03-23
 section: content
 ---
 
-This post is *profoundly* interesting.</code></pre>
+Этот пост *глубоко* интересен.</code></pre>
 <blockquote>
 <p><em>my-second-post.blade.php</em></p>
 </blockquote>
 <pre><code>---
-title: My Second Blog Post
+title: Моя вторая запись в блоге
 author: Keith Damiani
 date: 2017-03-25
 section: content
 ---
 @extends ('_layouts.post')
 
-This is {{ $page-&gt;author }}'s second &lt;strong&gt;amazing&lt;/strong&gt; post.</code></pre>
-<h3>Collection items with no parent template</h3>
-<p>However, parent templates are optional for collection items. In some cases—such as for a collection of staff bios that appear on an &quot;About Us&quot; page—you may not need to display each of your collection items on their own pages. To do this, simply omit the <code>extends</code> key from the YAML front matter, or the <code>@extends</code> directive from a Blade file.</p>
-<h3>Collection items with multiple parent templates</h3>
-<p>Collection items can also extend <em>multiple</em> parent templates, by specifying the templates as an array in the <code>extends</code> key in the YAML front matter. This will generate a separate URL for each template—allowing, for example, a collection item to have both <code>/web/item</code> and <code>/api/item</code> endpoints, or <code>/summary</code> and <code>/detail</code> views.</p>
+Это второй &lt;strong&gt;потрясающий&lt;/strong&gt; пост от {{ $page-&gt;author }}.</code></pre>
+<h3>Элементы коллекции без родительского шаблона</h3>
+<p>Однако родительские шаблоны для элементов коллекции необязательны. В некоторых случаях - например, для коллекции биографий сотрудников, которые появляются на странице «О нас», Вам может не понадобиться отображать каждый из элементов Вашей коллекции на отдельных страницах. Для этого просто опустите ключ <code>extends</code> из основного материала YAML или директиву <code>@extends</code> из файла Blade.</p>
+<h3>Элементы коллекции с несколькими родительскими шаблонами</h3>
+<p>Элементы коллекции также могут расширять <em>множественные</em> родительские шаблоны, определяя шаблоны как массив в ключе <code>extends</code> во вступительной части YAML. Это будет генерировать отдельный URL для каждого шаблона, что позволяет, например, элементу коллекции иметь как конечные точки <code>/web/item</code> и <code>/api/item</code>, так и представления <code>/summary</code> и <code>/detail</code>.</p>
 <blockquote>
 <p>_<em>people/abraham-lincoln.md</em></p>
 </blockquote>
 <pre><code>---
-name: Abraham Lincoln
-role: President
+name: Абрахам Линкольн
+role: Президент
 number: 16
 extends:
   web: _layouts.person
@@ -122,7 +122,7 @@ section: content
 <p>_<em>layouts.api.person.blade.js</em></p>
 </blockquote>
 <pre><code>{!! ($page-&gt;api()) !!}</code></pre>
-<p>If using multiple parent templates, you can specify separate paths in <code>config.php</code> for each resulting page:</p>
+<p>При использовании нескольких родительских шаблонов Вы можете указать отдельные пути в <code>config.php</code> для каждой полученной страницы:</p>
 <blockquote>
 <p><em>config.php</em></p>
 </blockquote>

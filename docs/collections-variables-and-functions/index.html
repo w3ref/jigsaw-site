@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,19 +63,19 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Переменные и вспомогательные функции</h2>
-<p>Each collection can have its own set of variables and helper methods defined in the collection array in <code>config.php</code>. These follow the same format as the site-wide <a href="/docs/site-variables">variables</a> and <a href="/docs/helper-methods">helper methods</a> that are defined at the top level of the <code>config.php</code> array.</p>
-<h3>Variables</h3>
-<p>Just as with site-wide variables, collection variables defined in <code>config.php</code> can act as defaults, which can be overridden by variables of the same name specified in the YAML front matter of a collection item. In fact, top-level variables in <code>config.php</code> will be overridden by variables of the same name in a collection's array, which will be further overridden by references in the YAML header of any individual page, allowing you to set up a cascade of variable defaults. For example:</p>
+<p>Каждая коллекция может иметь свой собственный набор переменных и вспомогательных методов, определенных в массиве коллекции в <code>config.php</code>. Они имеют тот же формат, что и <a href="/docs/site-variables">переменные</a> и <a href="/docs/helper-methods">вспомогательные методы</a> для всего сайта, которые определены на верхнем уровне массива <code>config.php</code>.</p>
+<h3>Переменные</h3>
+<p>Как и в случае с общесайтовыми переменными, переменные коллекции, определенные в <code>config.php</code>, могут действовать как значения по умолчанию, которые могут быть переопределены переменными с тем же именем, указанными в начальной части YAML элемента коллекции. Фактически, переменные верхнего уровня в <code>config.php</code> будут переопределены одноименными переменными в массиве коллекции, которые в дальнейшем будут переопределены ссылками в заголовке YAML любой отдельной страницы, что позволит Вам настроить каскад значений переменных по умолчанию. Например:</p>
 <blockquote>
 <p><em>config.php</em></p>
 </blockquote>
 <pre><code>&lt;?php
 
 return [
-    'author' =&gt; 'Default Site Author',
+    'author' =&gt; 'Автор сайта по умолчанию',
     'collections' =&gt; [
         'posts' =&gt; [
-            'author' =&gt; 'Default Blog Author',
+            'author' =&gt; 'Автор блога по умолчанию',
         ],
     ],
 ];</code></pre>
@@ -84,8 +84,8 @@ return [
 </blockquote>
 <pre><code>---
 extends: _layouts.post
-title: My First Post
-author: Keith Damiani
+title: Мой первый пост
+author: Кейт Дамиани
 ---
 @section ('content')
 
@@ -93,14 +93,14 @@ author: Keith Damiani
 &lt;p&gt;By {{ $page-&gt;author }}&lt;/p&gt;
 
 @endsection</code></pre>
-<p>For this collection item, author will be <em>Keith Damiani</em>, the value from the YAML header.</p>
+<p>Автором этого элемента коллекции будет <em>Кейт Дамиани</em>, значение из заголовка YAML.</p>
 <hr />
 <blockquote>
 <p>_<em>posts/blog-post-2.blade.php</em></p>
 </blockquote>
 <pre><code>---
 extends: _layouts.post
-title: My Second Post
+title: Мой второй пост
 ---
 @section ('content')
 
@@ -108,14 +108,14 @@ title: My Second Post
 &lt;p&gt;By {{ $page-&gt;author }}&lt;/p&gt;
 
 @endsection</code></pre>
-<p>For this collection item, author will be <em>Default Blog Author</em>, the value from the <code>posts</code> array in <code>config.php</code>.</p>
+<p>Для этого элемента коллекции автором будет <em>Автор блога по умолчанию</em>, значение из массива <code>posts</code> в <code>config.php</code>.</p>
 <hr />
 <blockquote>
 <p><em>about-us.blade.php</em></p>
 </blockquote>
 <pre><code>---
 extends: _layouts.about
-title: About our company
+title: О нашей компании
 ---
 @section ('content')
 
@@ -123,9 +123,9 @@ title: About our company
 &lt;p&gt;By {{ $page-&gt;author }}&lt;/p&gt;
 
 @endsection</code></pre>
-<p>For this regular (non-collection) page, author will be <em>Default Site Author</em>, the value from the top level of <code>config.php.</code></p>
-<h3>Helper Functions</h3>
-<p>Helper functions can be included in the collection settings array in <code>config.php</code>, and will be available to all of that collection's items. The same cascading rules that apply to variables also apply to functions, i.e. functions defined for a collection will override a function of the same name defined at the top level. For example:</p>
+<p>Для этой обычной страницы (не являющейся коллекцией) автором будет <em>Автор сайта по умолчанию</em>, значение из верхнего уровня <code>config.php.</code></p>
+<h3>Вспомогательные функции</h3>
+<p>Вспомогательные функции могут быть включены в массив настроек коллекции в <code>config.php</code> и будут доступны для всех элементов этой коллекции. Те же правила каскадирования, которые применяются к переменным, также применимы к функциям, то есть функции, определенные для коллекции, переопределят функцию с тем же именем, определенную на верхнем уровне. Например:</p>
 <blockquote>
 <p><em>config.php</em></p>
 </blockquote>

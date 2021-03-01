@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,8 +63,8 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Фильтрация</h2>
-<p>You can filter collection items by adding a <code>filter</code> key to the collection's array in <code>config.php</code>, and specifying a callable that accepts the collection item and returns a boolean. Items that return <code>false</code> from the filter will not be built.</p>
-<p>A common use for filtering is to mark some blog posts as <code>published</code>, using a variable in the YAML front matter of each collection item that specifies a boolean or a date. Using a filter in <code>config.production.php</code>, draft posts can be made visible in the local or staging <a href="/docs/building-and-previewing-environments">environments</a>, but omitted from your production build.</p>
+<p>Вы можете фильтровать элементы коллекции, добавив ключ <code>filter</code> в массив коллекции в <code>config.php</code> и указав вызываемый объект, который принимает элемент коллекции и возвращает логическое значение. Элементы, которые возвращают <code>false</code> из фильтра, не будут построены.</p>
+<p>Обычно фильтрация используется для того, чтобы пометить некоторые сообщения в блоге как <code>published</code>, используя переменную в начальной части YAML каждого элемента коллекции, которая указывает логическое значение или дату. Используя фильтр в <code>config.production.php</code>, черновики сообщений можно сделать видимыми в локальной или промежуточной <a href="/docs/building-and-previewing-environments">средах</a>, но исключить их из производственной сборки.</p>
 <blockquote>
 <p><em>config.php</em></p>
 </blockquote>

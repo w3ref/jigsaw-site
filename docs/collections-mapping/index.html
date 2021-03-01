@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Картография</h2>
-<p>You can map over your collection items by adding a <code>map</code> key to the collection's array in <code>config.php</code>, and specifying a callback that accepts the collection item. Each item is an instance of the <code>TightenCo\Jigsaw\Collection\CollectionItem</code> class, from which you can instantiate your own custom class using the static <code>fromItem()</code> method. Your custom class can include helper methods that might be too complex for storing in your <code>config.php</code> array.</p>
+<p>Вы можете сопоставить элементы своей коллекции, добавив ключ <code>map</code> в массив коллекции в <code>config.php</code> и указав обратный вызов, который принимает элемент коллекции. Каждый элемент является экземпляром класса <code>TightenCo\Jigsaw\Collection\CollectionItem</code>, из которого Вы можете создать экземпляр своего собственного пользовательского класса, используя статический метод <code>fromItem()</code>. Ваш собственный класс может включать вспомогательные методы, которые могут быть слишком сложными для хранения в Вашем массиве <code>config.php</code>.</p>
 <blockquote>
 <p><em>config.php</em></p>
 </blockquote>
@@ -78,7 +78,7 @@ return [
         ],
     ],
 ];</code></pre>
-<p>Your custom <code>Post</code> class should extend <code>TightenCo\Jigsaw\Collection\CollectionItem</code>, and could include helper functions, reference and/or modify page variables, etc.:</p>
+<p>Ваш собственный класс <code>Post</code> должен расширять <code>TightenCo\Jigsaw\Collection\CollectionItem</code> и может включать вспомогательные функции, ссылаться и/или изменять переменные страницы и т.д.:</p>
 <pre><code>&lt;?php
 
 use TightenCo\Jigsaw\Collection\CollectionItem;

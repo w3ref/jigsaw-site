@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,23 +63,23 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Пути</h2>
-<h3>Default Path Setting</h3>
-<p>By default, each of your collection items (if they <code>extend</code> a parent template) will be assigned a path where the first segment is the name of the collection, and the second segment is the filename converted to a URL &quot;slug&quot;—all lowercase, with words separated by dashes. So the default path for a file named <code>My First Blog Post.md</code> in a collection named <code>posts</code> would be <code>/posts/my-first-blog-post</code>.</p>
-<p>Jigsaw gives you the ability to customize your collection paths, however, by adding a <code>path</code> key to your collection array.</p>
-<h3>Custom Path Shorthand</h3>
-<p>You can specify your collection path as a string. In this string, you can reference the values of any variables that are defined within the YAML front matter of the collection item, by specifying the variable name enclosed in <code>{}</code> brackets. If your collection items each include a <code>title</code> variable, for example, you could define your path as:</p>
+<h3>Настройка пути по умолчанию</h3>
+<p>По умолчанию каждому из элементов Вашей коллекции (если они <code>расширяют</code> родительский шаблон) будет назначен путь, где первый сегмент - это имя коллекции, а второй сегмент - это имя файла, преобразованное в URL-адрес &quot;slug&quot; (слаг) все строчные буквы, слова разделены тире. Таким образом, путь по умолчанию для файла с именем <code>My First Blog Post.md</code> в коллекции с именем <code>posts</code> будет <code>/posts/my-first-blog-post</code>.</p>
+<p>Однако Jigsaw дает Вам возможность настраивать пути Вашей коллекции, добавляя ключ <code>path</code> в массив Вашей коллекции.</p>
+<h3>Сокращение пользовательский путей</h3>
+<p>Вы можете указать путь к Вашей коллекции в виде строки. В этой строке Вы можете ссылаться на значения любых переменных, которые определены в передней части YAML элемента коллекции, указав имя переменной в квадратных скобках <code>{}</code>. Если каждый из Ваших элементов коллекции включает, например, переменную <code>title</code>, Вы можете определить свой путь как:</p>
 <pre><code>'path' =&gt; 'blog/{title}'                             // 'blog/Title Of First Post'</code></pre>
-<p>In addition, the variables <code>filename</code> (containing the filename without extension) and <code>collection</code> (containing the collection name) are available:</p>
+<p>Кроме того, доступны переменные <code>filename</code> (содержащие имя файла без расширения) и <code>collection</code> (содержащие имя коллекции):</p>
 <pre><code>'path' =&gt; '{collection}/{filename}'                  // 'posts/my first blog post'</code></pre>
-<p>In most cases, when using filenames or titles, you will want to &quot;slugify&quot; them when used as part of a path. To do so, prepend a separator to the variable name:</p>
+<p>В большинстве случаев при использовании имен файлов или заголовков Вы захотите «объединить» их, когда они используются как часть пути. Для этого добавьте разделитель к имени переменной:</p>
 <pre><code>'path' =&gt; '{collection}/{-filename}'                 // 'posts/my-first-blog-post'
 'path' =&gt; '{collection}/{_filename}'                 // 'posts/my_first_blog_post'</code></pre>
-<p>If you included a date as a variable in your collection items (in YYYY-MM-DD format), you can control the formatting of that date in your path by following the variable name with a pipe and using PHP date formatting codes. For any <code>/</code>s in your date formatting code, Jigsaw will create subdirectories as needed:</p>
+<p>Если Вы включили дату в качестве переменной в элементы коллекции (в формате ГГГГ-ММ-ДД), Вы можете управлять форматированием этой даты в своем пути, поставив после имени переменной вертикальную черту и используя коды форматирования даты PHP. Для любых <code>/</code> в Вашем коде форматирования даты Jigsaw создаст подкаталоги по мере необходимости:</p>
 <pre><code>'path' =&gt; '{collection}/{published|Y-m-d}/{-title}'  // 'posts/2017-03-27/title-of-first-post'
 'path' =&gt; '{collection}/{published|Y/m}/{-title}'    // 'posts/2017/03/title-of-first-post'
 'path' =&gt; 'blog-{published|F-Y}/{-title}'            // 'blog-March-2017/title-of-first-post'</code></pre>
-<h3>Custom Path Closure</h3>
-<p>Though the path shorthand allows you to easily create the most common permalink formats, you can also return a closure from <code>path</code> if you require more control. The closure will receive the contents of the current collection item as its first parameter. For example:</p>
+<h3>Замыкание пользовательский путей</h3>
+<p>Хотя сокращение пути позволяет Вам легко создавать наиболее распространенные форматы постоянных ссылок, Вы также можете вернуть закрытие из <code>path</code>, если Вам требуется больше контроля. Замыкание получит содержимое текущего элемента коллекции в качестве своего первого параметра. Например:</p>
 <pre><code>use Illuminate\Support\Str;
 
 'path' =&gt; function ($page) {

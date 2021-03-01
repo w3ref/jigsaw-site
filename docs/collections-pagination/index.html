@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/fac7rzg.css">
 
-        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=e363eb510547c81027c5">
+        <link rel="stylesheet" type="text/css" href="/assets/build/css/main.css?id=d4d84bd32bbfd7f8d5c1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:100,300,300italic,400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
         <div class="markdown bg-white w-full lg:max-w-md xl:max-w-lg md:mb-6 lg:mb-10 px-6 xl:px-10 pt-4 pb-8 font-normal sm:shadow md:rounded-lg" v-pre>
             <h4><a href="/docs/collections">Коллекции</a></h4>
 <h2>Пагинация</h2>
-<p>You can create a Blade template that displays your collection items in a paginated format by including a <code>pagination</code> key in the template's YAML front matter. The pagination header should include the <code>collection</code> name and the <code>perPage</code> count:</p>
+<p>Вы можете создать шаблон Blade, который отображает элементы Вашей коллекции в формате с разбивкой на страницы, включив ключ <code>pagination</code> в обложку YAML шаблона. Заголовок разбивки на страницы должен включать имя коллекции <code>collection</code> и счетчик <code>perPage</code>:</p>
 <blockquote>
 <p><em>posts.blade.php</em></p>
 </blockquote>
@@ -75,39 +75,25 @@ pagination:
 @extends('_layouts.master')
 ...</code></pre>
 <blockquote>
-<p>If you don't provide a <code>perPage</code> value, the default value will be 10. The default value can also be set globally by adding a <code>perPage</code> key to <code>config.php</code>.</p>
+<p>Если Вы не укажете значение <code>perPage</code>, значением по умолчанию будет 10. Значение по умолчанию также можно установить глобально, добавив ключ <code>perPage</code> в <code>config.php</code>.</p>
 </blockquote>
-<p>Once the <code>pagination</code> has been defined in the header, the template will have access to a special <code>$pagination</code> variable, which has several attributes:</p>
+<p>Как только в заголовке будет определена <code>pagination</code>, шаблон получит доступ к специальной переменной <code>$pagination</code>, которая имеет несколько атрибутов:</p>
 <ul>
-<li>
-<p><code>$pagination-&gt;items</code> contains an array of collection items for the current page</p>
-</li>
-<li>
-<p><code>$pagination-&gt;currentPage</code> contains the page number of the current page</p>
-</li>
-<li>
-<p><code>$pagination-&gt;totalPages</code> contains the total number of pages</p>
-</li>
-<li>
-<p><code>$pagination-&gt;pages</code> contains an array of paths to each page</p>
-<blockquote>
-<p>Note that the <code>pages</code> are indexed by their page number, i.e. they are 1-based. So you can refer to the paths of a page by the page number, i.e. <code>$pagination-&gt;page[1]</code> will return the path to the first page.</p>
-</blockquote>
-</li>
-<li>
-<p><code>$pagination-&gt;first</code> contains the path to the first page (the same as <code>$pagination-&gt;path[1]</code>)</p>
-</li>
-<li>
-<p><code>$pagination-&gt;last</code> contains the path to the last page</p>
-</li>
-<li>
-<p><code>$pagination-&gt;next</code> contains the path to the next page</p>
-</li>
-<li>
-<p><code>$pagination-&gt;previous</code> contains the path to the previous page</p>
-</li>
+<li><code>$pagination-&gt;items</code> содержит массив элементов коллекции для текущей страницы</li>
+<li><code>$pagination-&gt;currentPage</code> содержит номер текущей страницы</li>
+<li><code>$pagination-&gt;totalPages</code> содержит общее количество страниц</li>
+<li><code>$pagination-&gt;pages</code> содержит массив путей к каждой странице</li>
 </ul>
-<p>Using these <code>$pagination</code> attributes, you can build a set of pagination buttons and links:</p>
+<blockquote>
+<p>Обратите внимание, что страницы <code>pages</code> индексируются по их номерам, т.е. они начинаются с 1. Таким образом, Вы можете ссылаться на пути страницы по номеру страницы, т.е. <code>$pagination-&gt;page[1]</code> вернет путь к первой странице.</p>
+</blockquote>
+<ul>
+<li><code>$pagination-&gt;first</code> содержит путь к первой странице (аналогично <code>$pagination-&gt;path[1]</code>)</li>
+<li><code>$pagination-&gt;last</code> содержит путь к последней странице</li>
+<li><code>$pagination-&gt;next</code> содержит путь к следующей странице</li>
+<li><code>$pagination-&gt;previous</code> содержит путь к предыдущей странице</li>
+</ul>
+<p>Используя эти атрибуты <code>$pagination</code>, Вы можете создать набор кнопок и ссылок нумерации страниц:</p>
 <pre><code>@if ($previous = $pagination-&gt;previous)
     &lt;a href="{{ $page-&gt;baseUrl }}{{ $pagination-&gt;first }}"&gt;&amp;lt;&amp;lt;&lt;/a&gt;
     &lt;a href="{{ $page-&gt;baseUrl }}{{ $previous }}"&gt;&amp;lt;&lt;/a&gt;
@@ -128,7 +114,7 @@ pagination:
 @else
     &amp;gt; &amp;gt;&amp;gt;
 @endif</code></pre>
-<p>To display the items on each page, iterate over the <code>$pagination-&gt;items</code> collection:</p>
+<p>Чтобы отобразить элементы на каждой странице, выполните итерацию по коллекции <code>$pagination-&gt;items</code>:</p>
 <pre><code>@foreach ($pagination-&gt;items as $post)
     &lt;h3&gt;&lt;a href="{{ $post-&gt;getUrl() }}"&gt;{{ $post-&gt;title }}&lt;/a&gt;&lt;/h3&gt;
     &lt;p class="text-sm"&gt;by {{ $post-&gt;author }} • {{ date('F j, Y', $post-&gt;date) }}&lt;/p&gt;
