@@ -60,8 +60,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script type="text/javascript">
         docsearch({
-            apiKey: '57a7f5b1e4e0a44c7e2f8e96abcbf674',
-            indexName: 'jigsaw',
+            apiKey: 'edec3348f3b1c2798189bf1337aad17d',
+            indexName: 'jigsaw_su',
             inputSelector: '#docsearch'
         });
 

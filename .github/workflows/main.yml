@@ -1,0 +1,33 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master-ru
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install NPM Dependencies
+      run: npm install
+    - name: Install Composer Dependencies
+      run: composer install
+    - name: Build website
+      run: npm run production
+    - name: Prepare production
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add build_production -f && git commit -m "Build for deploy"
+    - name: Deploy website
+      run: |
+        git remote set-url origin https://${{secrets.GITHUB_TOKEN}}@github.com/jigsaw-ru/jigsaw-site.git
+        git subtree split --prefix build_production -b gh-pages
+        git push -f origin gh-pages:gh-pages
