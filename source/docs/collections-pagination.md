@@ -21,7 +21,7 @@ pagination:
 ...
 ```
 
-> If you don't provide a `perPage` value, the default value will be 10. The default value can also be set globally by adding a `perPage` key to `config.php`.
+> If you don't provide a `perPage` value in your template, a default value can be set for specific collection by adding a `perPage` key to the collection's settings in `config.php`, or globally by adding a `perPage` key to the top level of `config.php`. Otherwise, the default value will be 10.
 
 Once the `pagination` has been defined in the header, the template will have access to a special `$pagination` variable, which has several attributes:
 
