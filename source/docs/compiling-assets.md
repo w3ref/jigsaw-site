@@ -29,7 +29,7 @@ By default, any assets you want to process with Mix should live in `/source/_ass
     <div class="folder folder--open">source
         <div class="folder folder--open focus">_assets
             <div class="folder folder--open">js
-                <div class="file">app.js</div>
+                <div class="file">main.js</div>
             </div>
             <div class="folder folder--open">css
                 <div class="file">main.css</div>
@@ -59,7 +59,7 @@ By default, once Webpack compiles your assets, they will be placed in their corr
     <div class="folder folder--open">source
         <div class="folder folder--open">_assets
             <div class="folder folder--open">js
-                <div class="file">app.js</div>
+                <div class="file">main.js</div>
             </div>
             <div class="folder folder--open">css
                 <div class="file">main.css</div>
