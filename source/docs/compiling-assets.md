@@ -29,7 +29,7 @@ $ npm install
     <div class="folder folder--open">source
         <div class="folder folder--open focus">_assets
             <div class="folder folder--open">js
-                <div class="file">app.js</div>
+                <div class="file">main.js</div>
             </div>
             <div class="folder folder--open">css
                 <div class="file">main.css</div>
@@ -59,7 +59,7 @@ Mix ищет каждый тип ресурса _(например, CSS, JS, Sas
     <div class="folder folder--open">source
         <div class="folder folder--open">_assets
             <div class="folder folder--open">js
-                <div class="file">app.js</div>
+                <div class="file">main.js</div>
             </div>
             <div class="folder folder--open">css
                 <div class="file">main.css</div>
