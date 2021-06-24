@@ -2,5 +2,5 @@
 
 return [
     'production' => true,
-    'baseUrl' => 'http://jigsaw.tighten.co'
+    'baseUrl' => 'https://jigsaw.tighten.co',
 ];
