@@ -22,7 +22,7 @@
 
     <body class="min-h-screen font-sans leading-tight">
         <main id="vue-app">
-            <div class="w-full bg-brown-lightest border-t-5 border-purple"></div>
+            <div class="w-full bg-brown-lightest border-t-[5px] border-purple"></div>
 
             @yield('body')
         </main>
