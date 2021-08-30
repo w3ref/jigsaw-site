@@ -1,32 +1,25 @@
-let build = require("./tasks/build.js");
-let mix = require("laravel-mix");
-let tailwindcss = require("tailwindcss");
-require("laravel-mix-purgecss");
+const mix = require('laravel-mix');
+require('laravel-mix-jigsaw');
+require('laravel-mix-purgecss');
 
-mix.disableSuccessNotifications();
-mix.setPublicPath("source/assets/build");
+mix.disableNotifications();
+mix.setPublicPath('source/assets/build');
 
-mix.webpackConfig({
-    plugins: [
-        build.jigsaw,
-        build.browserSync(),
-        build.watch(["source/**/*.md", "source/**/*.php", "source/**/*.less"])
-    ]
-});
-
-mix.js('source/_assets/js/app.js', 'js/')
-    .less("source/_assets/less/main.less", "css/")
+mix.js('source/_assets/js/app.js', 'js')
+    .vue()
+    .less('source/_assets/less/main.less', 'css')
+    .jigsaw()
     .options({
-        postCss: [tailwindcss()]
+        postCss: [require('tailwindcss')],
     })
     .purgeCss({
-        enabled: true,
-        extensions: ['html', 'js', 'php', 'md', 'vue'],
-        folders: ['source'],
-        whitelistPatterns: [/language/, /hljs/, /algolia/, /docsearch/, /ds-/],
+        enabled: mix.inProduction(),
+        content: 'source/**/*.{html,js,php,md,vue}',
+        safelistPatterns: [/language/, /hljs/, /algolia/, /docsearch/, /ds-/],
     })
+    .browserSync({
+        server: 'build_local',
+        files: ['build_local/**'],
+    })
+    .sourceMaps()
     .version();
-
-if (! mix.inProduction()) {
-    mix.sourceMaps();
-}
