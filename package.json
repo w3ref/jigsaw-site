@@ -2,8 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "mix",
-        "prod": "mix --production",
-        "watch": "mix watch"
+        "watch": "mix watch",
+        "prod": "mix --production"
     },
     "devDependencies": {
         "autoprefixer": "^10.3.3",
