@@ -25,13 +25,15 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
     - name: Build website
       run: npm run production
+    - name: Stage Files
+      run: git add -f build_production
     - name: Commit files
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add build_production -f && git commit -m "Build for deploy"
+        git commit -m "Build for deploy"
     - name: Publish
       run: |
-        git remote set-url origin https://${{secrets.GITHUB_TOKEN}}@github.com/w3ref/jigsaw-site.git
-        git subtree split --prefix build_production -b gh-pages
-        git push -f origin gh-pages:gh-pages
+        git subtree split --prefix build_production -b master
+        git push -f origin master:master
+        git branch -D master
