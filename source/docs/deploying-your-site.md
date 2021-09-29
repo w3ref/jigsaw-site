@@ -16,7 +16,7 @@ section: documentation_content
 1. Создание своего сайт для продакшена
 
     ```
-    $ npm run production
+    $ npm run prod
     ```
 
 2. Зафиксируйте папку `build_production` в Вашем репозитории
@@ -40,7 +40,7 @@ section: documentation_content
 ```toml
 [build]
 
-command = "npm run production"
+command = "npm run prod"
 publish = "build_production"
 environment = { PHP_VERSION = "7.4" }
 ```

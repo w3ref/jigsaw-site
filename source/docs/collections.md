@@ -137,13 +137,15 @@ section: content
 <?php
 $authorPosts = $posts->filter(function ($value, $key) use ($page) {
     return $value->author == $page->author;
-}); ?>
+});
+?>
+
 @if ($authorPosts->count() > 0)
-<ul>
-@foreach ($authorPosts as $post)
-    <li>{{ $post->title }}</li>
-@endforeach
-</ul>
+    <ul>
+        @foreach ($authorPosts as $post)
+            <li>{{ $post->title }}</li>
+        @endforeach
+    </ul>
 @endif
 ```
 
