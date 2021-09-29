@@ -27,10 +27,11 @@ jobs:
       run: npm run production
     - name: Commit files
       run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
         git add build_production -f && git commit -m "Build for deploy"
     - name: Publish
       run: |
+        git remote set-url origin https://${{secrets.GITHUB_TOKEN}}@github.com/w3ref/jigsaw-site.git
         git subtree split --prefix build_production -b gh-pages
         git push -f origin gh-pages:gh-pages
