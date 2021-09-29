@@ -17,6 +17,8 @@ jobs:
         node-version: '10.x'
     - name: Install NPM Dependencies
       run: npm install
+    - name: Update Composer Dependencies
+      run: composer update
     - name: Install Composer Dependencies
       run: composer install
     - name: Build website
