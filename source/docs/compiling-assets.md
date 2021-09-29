@@ -121,7 +121,7 @@ Any time any file changes in your project, Webpack will recompile your assets, a
 
 Using `npm run watch` also enables [Browsersync](https://www.browsersync.io/), so your browser will automatically reload any time you make a change. It also manages serving your site locally for you, so you don't need to start your own local PHP server.
 
-You can also watch a specific environment by running `npm run local`, `npm run staging`, or `npm run production`.
+You can also watch a specific environment by running `npm run local`, `npm run staging`, or `npm run prod`.
 
 ---
 

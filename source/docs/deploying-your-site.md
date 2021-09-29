@@ -16,7 +16,7 @@ The approach we use at Tighten for deploying Jigsaw sites to GitHub pages looks 
 1. Build your site for production
 
     ```
-    $ npm run production
+    $ npm run prod
     ```
 
 2. Commit the `build_production` folder to your repository
@@ -40,7 +40,7 @@ To deploy a site to Netlify, first create a `netlify.toml` file with the followi
 ```toml
 [build]
 
-command = "npm run production"
+command = "npm run prod"
 publish = "build_production"
 environment = { PHP_VERSION = "7.4" }
 ```
