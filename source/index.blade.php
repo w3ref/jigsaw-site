@@ -11,8 +11,8 @@
                 современных разработчиков
             </h1>
 
-            <p class="max-w-md mt-4 text-grey-dark lead">
-                Jigsaw - это платформа для быстрого создания статических сайтов с использованием тех же <br class="hidden sm:block">
+            <p class="max-w-xl mt-4 text-grey-dark text-lg md:text-xl leading-normal">
+                Jigsaw — это фреймворк для быстрого создания статических сайтов с использованием тех же <br class="hidden sm:block">
                 современных инструментов, что и ваши веб-приложения.
             </p>
         </div>

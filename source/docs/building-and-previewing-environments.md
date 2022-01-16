@@ -44,7 +44,7 @@ $ ./vendor/bin/jigsaw build production
 В качестве альтернативы, если Вы [используете Laravel Mix для компиляции Ваших ресурсов](/docs/compiling-assets), Вы можете запустить сценарий `production` из `package.json`:
 
 ```
-$ npm run production
+$ npm run prod
 ```
 
 Ваш сайт будет сгенерирован в новую папку с именем `build_production`, а ваша папка `build_local` останется нетронутой.
